@@ -1,0 +1,2785 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="mysql数据库笔记, 博客,奇遇少年,少年,奇遇少年博客,个人博客,计算机,网络安全,源代码,技术笔记,前端开发,开发者,程序员,程序猿,程序媛,极客,码农,编程,代码,软件开发">
+	<meta name="google-site-verification" content="rmV0x0t2jXsytZVmDobgZugr-tRCHLifFuwIafFXi9E">
+	<meta name="baidu-site-verification" content="code-nXmmuvg7R7">
+    <meta name="360-site-verification" content="2db45fc772bbd3e7efd0985eec0fff97">
+    <meta name="description" content="MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="baidu-site-verification" content="wvlc3L96QK">
+    <title>mysql数据库笔记 | 奇遇少年</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.11/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <style type="text/css">
+        
+            
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+
+    <body>
+
+        <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">奇遇少年</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="" class="waves-effect waves-light">
+            
+            <i class="fa fa-heartbeat"></i>
+            
+            <span>清单</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tools" class="waves-effect waves-light">
+            
+            <i class="fa fa-suitcase"></i>
+            
+            <span>快捷导航</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/GoogleHacking/" class="waves-effect waves-light">
+            
+            <i class="fa fa-google"></i>
+            
+            <span>Hacking</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性  -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+              <a href="" class="waves-effect waves-light">
+                
+                  <i class="fa fa-archive"></i>
+                
+                <span>归档</span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </a>
+
+            <ul class="sub-nav menus_item_child ">
+              
+                <li> 
+                  <a href="/archives" >
+                    
+                      <i class="fa fa-paper-plane" style="margin-top: -20px;"></i>
+                    
+                    <span>时轴</span>
+                  </a>
+                </li>
+              
+                <li> 
+                  <a href="/categories" >
+                    
+                      <i class="fa fa-bookmark" style="margin-top: -20px;"></i>
+                    
+                    <span>分类</span>
+                  </a>
+                </li>
+              
+                <li> 
+                  <a href="/tags" >
+                    
+                      <i class="fa fa-tags" style="margin-top: -20px;"></i>
+                    
+                    <span>标签</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+              <a href="" class="waves-effect waves-light">
+                
+                  <i class="fa fa-heartbeat"></i>
+                
+                <span>清单</span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </a>
+
+            <ul class="sub-nav menus_item_child ">
+              
+                <li> 
+                  <a href="/List/music" >
+                    
+                      <i class="fa fa-music" style="margin-top: -20px;"></i>
+                    
+                    <span>音乐</span>
+                  </a>
+                </li>
+              
+                <li> 
+                  <a href="/List/galleries" >
+                    
+                      <i class="fa fa-photo" style="margin-top: -20px;"></i>
+                    
+                    <span>相册</span>
+                  </a>
+                </li>
+              
+                <li> 
+                  <a href="/List/movies" >
+                    
+                      <i class="fa fa-film" style="margin-top: -20px;"></i>
+                    
+                    <span>视频</span>
+                  </a>
+                </li>
+              
+                <li> 
+                  <a href="/List" >
+                    
+                      <i class="fa fa-coffee" style="margin-top: -20px;"></i>
+                    
+                    <span>休闲</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>关于我</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>留言板</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/tools" class="waves-effect waves-light">
+              
+                <i class="fa fa-suitcase"></i>
+              
+              <span>快捷导航</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>友情链接</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/GoogleHacking/" class="waves-effect waves-light">
+              
+                <i class="fa fa-google"></i>
+              
+              <span>Hacking</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">奇遇少年</div>
+        <div class="logo-desc">
+            
+            一个正在追梦的少年，陪有梦想的你一起成长。关注网站前端学习与制作，分享交流网站制作经验和技巧，打造自己专属的网站，让你的博客与众不同！
+            
+        </div>
+    </div>
+
+    
+<!-- 支持一级菜单特性 -->
+<!--    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-heartbeat"></i>
+                
+                清单
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tools" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-suitcase"></i>
+                
+                快捷导航
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/GoogleHacking/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-google"></i>
+                
+                Hacking
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/lnoom/lnoom.github.io.git" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+   
+   
+<!-- 支持二级菜单特性  -->
+ <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="javascript:;">
+                            
+                            <i class="fa fa-fw fa-archive"></i>
+                            
+                            归档
+                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+                    </a>
+                <ul>
+                  
+                    <li> 
+                      <a href="/archives" >
+                           
+                            <i class="fa fa-paper-plane" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>时轴</span>
+                      </a>
+                    </li>
+                  
+                    <li> 
+                      <a href="/categories" >
+                           
+                            <i class="fa fa-bookmark" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>分类</span>
+                      </a>
+                    </li>
+                  
+                    <li> 
+                      <a href="/tags" >
+                           
+                            <i class="fa fa-tags" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>标签</span>
+                      </a>
+                    </li>
+                   
+                </ul>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="javascript:;">
+                            
+                            <i class="fa fa-fw fa-heartbeat"></i>
+                            
+                            清单
+                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+                    </a>
+                <ul>
+                  
+                    <li> 
+                      <a href="/List/music" >
+                           
+                            <i class="fa fa-music" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>音乐</span>
+                      </a>
+                    </li>
+                  
+                    <li> 
+                      <a href="/List/galleries" >
+                           
+                            <i class="fa fa-photo" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>相册</span>
+                      </a>
+                    </li>
+                  
+                    <li> 
+                      <a href="/List/movies" >
+                           
+                            <i class="fa fa-film" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>视频</span>
+                      </a>
+                    </li>
+                  
+                    <li> 
+                      <a href="/List" >
+                           
+                            <i class="fa fa-coffee" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>休闲</span>
+                      </a>
+                    </li>
+                   
+                </ul>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        留言板
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tools" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-suitcase"></i>
+                        
+                        快捷导航
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友情链接
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/GoogleHacking/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-google"></i>
+                        
+                        Hacking
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/lnoom/lnoom.github.io.git" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> 
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/lnoom/lnoom.github.io.git" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        mysql数据库笔记
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.bootcss.com/tocbot/4.8.1/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+        width: 345px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        margin-bottom: 20px;
+    }
+    
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/mysql/" target="_blank">
+                                <span class="chip bg-color">mysql</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/数据库篇/" class="post-category" target="_blank">
+                                数据库篇
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-02-04
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        少年
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        6.6k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        25 分
+                    </div>
+                    
+                
+                
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+    
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/kuiler/imgaes/raw/master/img/1.jpg" alt="1"></p>
+<h3 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h3><h4 id="一、数据库的好处"><a href="#一、数据库的好处" class="headerlink" title="一、数据库的好处"></a>一、数据库的好处</h4><pre><code>1、可以持久化数据到本地
+2、结构化查询</code></pre><h4 id="二、数据库的常见概念-★"><a href="#二、数据库的常见概念-★" class="headerlink" title="二、数据库的常见概念 ★"></a>二、数据库的常见概念 ★</h4><pre><code>1、DB：数据库，存储数据的容器
+2、DBMS：数据库管理系统，又称为数据库软件或数据库产品，用于创建或管理DB
+3、SQL：结构化查询语言，用于和数据库通信的语言，不是某个数据库软件特有的，而是几乎所有的主流数据库软件通用的语言</code></pre><h4 id="三、数据库存储数据的特点"><a href="#三、数据库存储数据的特点" class="headerlink" title="三、数据库存储数据的特点"></a>三、数据库存储数据的特点</h4><pre><code>1、数据存放到表中，然后表再放到库中
+2、一个库中可以有多张表，每张表具有唯一的表名用来标识自己
+3、表中有一个或多个列，列又称为“字段”，相当于java中“属性”
+4、表中的每一行数据，相当于java中“对象”</code></pre><h4 id="四、常见的数据库管理系统"><a href="#四、常见的数据库管理系统" class="headerlink" title="四、常见的数据库管理系统"></a>四、常见的数据库管理系统</h4><pre><code>mysql、oracle、db2、sqlserver</code></pre><h3 id="mysql介绍"><a href="#mysql介绍" class="headerlink" title="mysql介绍"></a>mysql介绍</h3><h4 id="一、MySQL的背景"><a href="#一、MySQL的背景" class="headerlink" title="一、MySQL的背景"></a>一、MySQL的背景</h4><pre><code>前身属于瑞典的一家公司，MySQL AB
+08年被sun公司收购
+09年sun被oracle收购</code></pre><h4 id="二、MySQL的优点"><a href="#二、MySQL的优点" class="headerlink" title="二、MySQL的优点"></a>二、MySQL的优点</h4><pre><code>1、开源、免费、成本低
+2、性能高、移植性也好
+3、体积小，便于安装</code></pre><h4 id="三、MySQL的安装"><a href="#三、MySQL的安装" class="headerlink" title="三、MySQL的安装"></a>三、MySQL的安装</h4><pre><code>属于c/s架构的软件，一般来讲安装服务端
+企业版
+社区版</code></pre><h4 id="四、MySQL服务的启动和停止"><a href="#四、MySQL服务的启动和停止" class="headerlink" title="四、MySQL服务的启动和停止"></a>四、MySQL服务的启动和停止</h4><pre><code>方式一：通过命令行
+    net start 服务名
+    net stop 服务名
+方式二：计算机——右击——管理——服务</code></pre><h4 id="五、MySQL服务的登录和退出"><a href="#五、MySQL服务的登录和退出" class="headerlink" title="五、MySQL服务的登录和退出"></a>五、MySQL服务的登录和退出</h4><pre><code>登录：mysql 【-h 主机名 -P 端口号】 -u 用户名 -p密码
+退出：exit或ctrl+C</code></pre><h3 id="基础查询"><a href="#基础查询" class="headerlink" title="基础查询"></a>基础查询</h3><h4 id="一、语法"><a href="#一、语法" class="headerlink" title="一、语法"></a>一、语法</h4><pre><code>select 查询列表
+from 表名;</code></pre><h4 id="二、特点"><a href="#二、特点" class="headerlink" title="二、特点"></a>二、特点</h4><pre><code>1、查询列表可以是字段、常量、表达式、函数，也可以是多个
+2、查询结果是一个虚拟表</code></pre><h4 id="三、示例"><a href="#三、示例" class="headerlink" title="三、示例"></a>三、示例</h4><p>1、查询单个字段</p>
+<pre><code>select 字段名 from 表名;</code></pre><p>2、查询多个字段</p>
+<pre><code>select 字段名，字段名 from 表名;</code></pre><p>3、查询所有字段</p>
+<pre><code>select * from 表名</code></pre><p>4、查询常量</p>
+<pre><code>select 常量值;
+注意：字符型和日期型的常量值必须用单引号引起来，数值型不需要</code></pre><p>5、查询函数</p>
+<pre><code>select 函数名(实参列表);</code></pre><p>6、查询表达式</p>
+<pre><code>select 100/1234;</code></pre><p>7、起别名</p>
+<pre><code>①as
+②空格</code></pre><p>8、去重</p>
+<pre><code>select distinct 字段名 from 表名;</code></pre><p>9、+</p>
+<pre><code>作用：做加法运算
+select 数值+数值; 直接运算
+select 字符+数值;先试图将字符转换成数值，如果转换成功，则继续运算；否则转换成0，再做运算
+select null+值;结果都为null</code></pre><p>10、【补充】concat函数</p>
+<pre><code>功能：拼接字符
+select concat(字符1，字符2，字符3,...);</code></pre><p>11、【补充】ifnull函数</p>
+<pre><code>功能：判断某字段或表达式是否为null，如果为null 返回指定的值，否则返回原本的值
+select ifnull(commission_pct,0) from employees;</code></pre><p>12、【补充】isnull函数</p>
+<pre><code>功能：判断某字段或表达式是否为null，如果是，则返回1，否则返回0</code></pre><h3 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h3><h4 id="一、语法-1"><a href="#一、语法-1" class="headerlink" title="一、语法"></a>一、语法</h4><pre><code>select 查询列表
+from 表名
+where 筛选条件</code></pre><h4 id="二、筛选条件的分类"><a href="#二、筛选条件的分类" class="headerlink" title="二、筛选条件的分类"></a>二、筛选条件的分类</h4><p>1、简单条件运算符</p>
+<pre><code>&lt; = &lt;&gt; != &gt;= &lt;=  &lt;=&gt;安全等于</code></pre><p>2、逻辑运算符</p>
+<pre><code>&amp;&amp; and
+|| or
+!  not</code></pre><p>3、模糊查询</p>
+<pre><code>like:一般搭配通配符使用，可以判断字符型或数值型
+通配符：%任意多个字符，_任意单个字符
+
+between and
+in
+is null /is not null：用于判断null值</code></pre><table>
+<thead>
+<tr>
+<th align="center">is null PK &lt;=&gt;</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td>普通类型的数值</td>
+<td>null值</td>
+<td>可读性</td>
+</tr>
+<tr>
+<td align="center">is null</td>
+<td>×</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td align="center">&lt;=&gt;</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+</tr>
+</tbody></table>
+<h3 id="排序查询"><a href="#排序查询" class="headerlink" title="排序查询"></a>排序查询</h3><h4 id="一、语法-2"><a href="#一、语法-2" class="headerlink" title="一、语法"></a>一、语法</h4><pre><code>select 查询列表
+from 表
+where 筛选条件
+order by 排序列表 【asc}desc】</code></pre><h4 id="二、特点-1"><a href="#二、特点-1" class="headerlink" title="二、特点"></a>二、特点</h4><pre><code>1、asc ：升序，默认升序
+   desc：降序
+
+2、排序列表 支持 单个字段、多个字段、函数、表达式、别名
+
+3、order by的位置一般放在查询语句的最后（除limit语句之外）</code></pre><h3 id="常见函数"><a href="#常见函数" class="headerlink" title="常见函数"></a>常见函数</h3><h4 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h4><pre><code>功能：类似于java中的方法
+好处：提高重用性和隐藏实现细节
+调用：select 函数名(实参列表);</code></pre><h4 id="二、单行函数"><a href="#二、单行函数" class="headerlink" title="二、单行函数"></a>二、单行函数</h4><p>1、字符函数</p>
+<table>
+<thead>
+<tr>
+<th align="center">concat</th>
+<th align="center">连接</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">substr</td>
+<td align="center">截取子串</td>
+</tr>
+<tr>
+<td align="center">upper</td>
+<td align="center">变大写</td>
+</tr>
+<tr>
+<td align="center">lower</td>
+<td align="center">变小写</td>
+</tr>
+<tr>
+<td align="center">replace</td>
+<td align="center">替换</td>
+</tr>
+<tr>
+<td align="center">length</td>
+<td align="center">获取字节长度</td>
+</tr>
+<tr>
+<td align="center">trim</td>
+<td align="center">去前后空格</td>
+</tr>
+<tr>
+<td align="center">lpad</td>
+<td align="center">左填充</td>
+</tr>
+<tr>
+<td align="center">rpad</td>
+<td align="center">右填充</td>
+</tr>
+<tr>
+<td align="center">instr</td>
+<td align="center">获取子串第一次出现的索引</td>
+</tr>
+</tbody></table>
+<p>2、数学函数</p>
+<table>
+<thead>
+<tr>
+<th align="center">ceil</th>
+<th align="center">向上取整</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">round</td>
+<td align="center">四舍五入</td>
+</tr>
+<tr>
+<td align="center">mod</td>
+<td align="center">取模</td>
+</tr>
+<tr>
+<td align="center">floor</td>
+<td align="center">向下取整</td>
+</tr>
+<tr>
+<td align="center">truncate</td>
+<td align="center">截断</td>
+</tr>
+<tr>
+<td align="center">rand</td>
+<td align="center">获取随机数，返回0-1之间的小数</td>
+</tr>
+</tbody></table>
+<p>3、日期函数</p>
+<table>
+<thead>
+<tr>
+<th align="center">now</th>
+<th align="center">返回当前日期+时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">year</td>
+<td align="center">返回年</td>
+</tr>
+<tr>
+<td align="center">month</td>
+<td align="center">返回月</td>
+</tr>
+<tr>
+<td align="center">day</td>
+<td align="center">返回日</td>
+</tr>
+<tr>
+<td align="center">date_format</td>
+<td align="center">将日期转换成字符</td>
+</tr>
+<tr>
+<td align="center">curdate</td>
+<td align="center">返回当前日期</td>
+</tr>
+<tr>
+<td align="center">str_to_date</td>
+<td align="center">将字符转换成日期</td>
+</tr>
+<tr>
+<td align="center">curtime</td>
+<td align="center">返回当前时间</td>
+</tr>
+<tr>
+<td align="center">hour</td>
+<td align="center">小时</td>
+</tr>
+<tr>
+<td align="center">minute</td>
+<td align="center">分钟</td>
+</tr>
+<tr>
+<td align="center">second</td>
+<td align="center">秒</td>
+</tr>
+<tr>
+<td align="center">datediff</td>
+<td align="center">返回两个日期相差的天数</td>
+</tr>
+<tr>
+<td align="center">monthname</td>
+<td align="center">以英文形式返回月</td>
+</tr>
+</tbody></table>
+<p>4、其他函数</p>
+<table>
+<thead>
+<tr>
+<th align="center">version</th>
+<th align="center">当前数据库服务器的版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">database</td>
+<td align="center">当前打开的数据库</td>
+</tr>
+<tr>
+<td align="center">user</td>
+<td align="center">当前用户</td>
+</tr>
+<tr>
+<td align="center">password(‘字符’)</td>
+<td align="center">返回该字符的密码形式</td>
+</tr>
+<tr>
+<td align="center">md5(‘字符’)</td>
+<td align="center">返回该字符的md5加密形式</td>
+</tr>
+</tbody></table>
+<p>5、流程控制函数</p>
+<pre><code>①if(条件表达式，表达式1，表达式2)：如果条件表达式成立，返回表达式1，否则返回表达式2</code></pre><pre><code>②case情况1
+case 变量或表达式或字段
+when 常量1 then 值1
+when 常量2 then 值2
+...
+else 值n
+end</code></pre><pre><code>③case情况2
+case 
+when 条件1 then 值1
+when 条件2 then 值2
+...
+else 值n
+end</code></pre><h4 id="三、分组函数"><a href="#三、分组函数" class="headerlink" title="三、分组函数"></a>三、分组函数</h4><p>1、分类</p>
+<table>
+<thead>
+<tr>
+<th align="center">max</th>
+<th align="center">最大值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">min</td>
+<td align="center">最小值</td>
+</tr>
+<tr>
+<td align="center">sum</td>
+<td align="center">和</td>
+</tr>
+<tr>
+<td align="center">avg</td>
+<td align="center">平均值</td>
+</tr>
+<tr>
+<td align="center">count</td>
+<td align="center">计算个数</td>
+</tr>
+</tbody></table>
+<p>2、特点</p>
+<p>①语法</p>
+<pre><code>select max(字段) from 表名;</code></pre><p>②支持的类型</p>
+<pre><code>sum和avg一般用于处理数值型
+max、min、count可以处理任何数据类型</code></pre><p>③以上分组函数都忽略null<br>④都可以搭配distinct使用，实现去重的统计</p>
+<pre><code>select sum(distinct 字段) from 表;</code></pre><p>⑤count函数</p>
+<pre><code>count(字段)：统计该字段非空值的个数
+count(*):统计结果集的行数</code></pre><p>案例：查询每个部门的员工个数</p>
+<table>
+<thead>
+<tr>
+<th align="center">1</th>
+<th align="center">xx</th>
+<th align="center">10</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">2</td>
+<td align="center">dd</td>
+<td align="center">20</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">mm</td>
+<td align="center">30</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">aa</td>
+<td align="center">40</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">hh</td>
+<td align="center">50</td>
+</tr>
+</tbody></table>
+<p>count(1):统计结果集的行数</p>
+<p>效率上：</p>
+<pre><code>MyISAM存储引擎，count(*)最高
+InnoDB存储引擎，count(*)和count(1)效率&gt;count(字段)</code></pre><p>⑥ 和分组函数一同查询的字段，要求是group by后出现的字段</p>
+<h3 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h3><h4 id="一、语法-3"><a href="#一、语法-3" class="headerlink" title="一、语法"></a>一、语法</h4><pre><code> select 分组函数，分组后的字段
+ from 表
+【where 筛选条件】
+ group by 分组的字段
+【having 分组后的筛选】
+【order by 排序列表】</code></pre><h4 id="二、特点-2"><a href="#二、特点-2" class="headerlink" title="二、特点"></a>二、特点</h4><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">使用关键字</th>
+<th align="center">筛选的表</th>
+<th align="center">位置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">分组前筛选</td>
+<td align="center">where</td>
+<td align="center">原始表</td>
+<td align="center">group by的前面</td>
+</tr>
+<tr>
+<td align="center">分组后筛选</td>
+<td align="center">having</td>
+<td align="center">分组后的结果</td>
+<td align="center">group by 的后面</td>
+</tr>
+</tbody></table>
+<h3 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h3><h4 id="一、含义"><a href="#一、含义" class="headerlink" title="一、含义"></a>一、含义</h4><pre><code>当查询中涉及到了多个表的字段，需要使用多表连接
+select 字段1，字段2
+from 表1，表2,...;</code></pre><p>笛卡尔乘积：当查询多个表时，没有添加有效的连接条件，导致多个表所有行实现完全连接<br>如何解决：添加有效的连接条件</p>
+<h4 id="二、分类"><a href="#二、分类" class="headerlink" title="二、分类"></a>二、分类</h4><p>按年代分类：<br>    sql92：</p>
+<pre><code>等值   非等值    自连接</code></pre><p>​    也支持一部分外连接（用于oracle、sqlserver，mysql不支持）<br>sql99【推荐使用】<br>​    内连接</p>
+<pre><code>等值   非等值    自连接</code></pre><p>​    外连接</p>
+<pre><code>左外    右外      全外（mysql不支持）</code></pre><p>​    交叉连接</p>
+<h4 id="三、SQL92语法"><a href="#三、SQL92语法" class="headerlink" title="三、SQL92语法"></a>三、SQL92语法</h4><p>1、等值连接<br>语法：</p>
+<pre><code>select 查询列表
+    from 表1 别名,表2 别名
+    where 表1.key=表2.key
+    【and 筛选条件】
+    【group by 分组字段】
+    【having 分组后的筛选】
+    【order by 排序字段】</code></pre><p>特点：</p>
+<pre><code>    ① 一般为表起别名
+    ②多表的顺序可以调换
+    ③n表连接至少需要n-1个连接条件
+    ④等值连接的结果是多表的交集部分</code></pre><p>2、非等值连接<br>语法：</p>
+<pre><code>select 查询列表
+    from 表1 别名,表2 别名
+    where 非等值的连接条件
+    【and 筛选条件】
+    【group by 分组字段】
+    【having 分组后的筛选】
+    【order by 排序字段】</code></pre><p>3、自连接</p>
+<p>语法：    </p>
+<pre><code>select 查询列表
+    from 表 别名1,表 别名2
+    where 等值的连接条件
+    【and 筛选条件】
+    【group by 分组字段】
+    【having 分组后的筛选】
+    【order by 排序字段】</code></pre><h4 id="四、SQL99语法"><a href="#四、SQL99语法" class="headerlink" title="四、SQL99语法"></a>四、SQL99语法</h4><p>1、内连接<br>语法：</p>
+<pre><code>select 查询列表
+    from 表1 别名
+    【inner】 join 表2 别名 on 连接条件
+    where 筛选条件
+    group by 分组列表
+    having 分组后的筛选
+    order by 排序列表
+    limit 子句;</code></pre><p>特点：</p>
+<pre><code>①表的顺序可以调换
+②内连接的结果=多表的交集
+③n表连接至少需要n-1个连接条件</code></pre><p>分类：</p>
+<pre><code>等值连接
+非等值连接
+自连接</code></pre><p>2、外连接<br>语法：</p>
+<pre><code>select 查询列表
+    from 表1 别名
+    left|right|full【outer】 join 表2 别名 on 连接条件
+    where 筛选条件
+    group by 分组列表
+    having 分组后的筛选
+    order by 排序列表
+    limit 子句;</code></pre><p>特点：</p>
+<pre><code>①查询的结果=主表中所有的行，如果从表和它匹配的将显示匹配行，如果从表没有匹配的则显示null
+②left join 左边的就是主表，right join 右边的就是主表
+ full join 两边都是主表
+③一般用于查询除了交集部分的剩余的不匹配的行</code></pre><p>3、交叉连接</p>
+<pre><code>语法：
+select 查询列表
+from 表1 别名
+cross join 表2 别名;</code></pre><p>特点：</p>
+<pre><code>类似于笛卡尔乘积        </code></pre><h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3><h4 id="一、含义-1"><a href="#一、含义-1" class="headerlink" title="一、含义"></a>一、含义</h4><pre><code>嵌套在其他语句内部的select语句称为子查询或内查询，
+外面的语句可以是insert、update、delete、select等，一般select作为外面语句较多
+外面如果为select语句，则此语句称为外查询或主查询</code></pre><h4 id="二、分类-1"><a href="#二、分类-1" class="headerlink" title="二、分类"></a>二、分类</h4><p>1、按出现位置</p>
+<pre><code>select后面：
+        仅仅支持标量子查询
+from后面：
+        表子查询
+where或having后面：
+        标量子查询
+        列子查询
+        行子查询
+exists后面：
+        标量子查询
+        列子查询
+        行子查询
+        表子查询</code></pre><p>2、按结果集的行列</p>
+<pre><code>标量子查询（单行子查询）：结果集为一行一列
+列子查询（多行子查询）：结果集为多行一列
+行子查询：结果集为多行多列
+表子查询：结果集为多行多列</code></pre><p>三、示例</p>
+<pre><code>where或having后面</code></pre><p>1、标量子查询<br>案例：查询最低工资的员工姓名和工资<br>①最低工资</p>
+<pre><code>select min(salary) from employees</code></pre><p>②查询员工的姓名和工资，要求工资=①</p>
+<pre><code>select last_name,salary
+from employees
+where salary=(
+    select min(salary) from employees
+);</code></pre><p>2、列子查询<br>案例：查询所有是领导的员工姓名<br>①查询所有员工的 manager_id</p>
+<pre><code>select manager_id
+from employees</code></pre><p>②查询姓名，employee_id属于①列表的一个</p>
+<pre><code>select last_name
+from employees
+where employee_id in(
+    select manager_id
+    from employees
+);                        </code></pre><h3 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h3><h4 id="一、应用场景"><a href="#一、应用场景" class="headerlink" title="一、应用场景"></a>一、应用场景</h4><p>当要查询的条目数太多，一页显示不全</p>
+<h4 id="二、语法"><a href="#二、语法" class="headerlink" title="二、语法"></a>二、语法</h4><pre><code>select 查询列表
+from 表
+limit 【offset，】size;</code></pre><p>注意：<br>offset代表的是起始的条目索引，默认从0卡死<br>size代表的是显示的条目数</p>
+<p>公式：<br>假如要显示的页数为page，每一页条目数为size</p>
+<pre><code>select 查询列表
+from 表
+limit (page-1)*size,size;</code></pre><h3 id="联合查询"><a href="#联合查询" class="headerlink" title="联合查询"></a>联合查询</h3><h4 id="一、含义-2"><a href="#一、含义-2" class="headerlink" title="一、含义"></a>一、含义</h4><p>union：合并、联合，将多次查询结果合并成一个结果</p>
+<h4 id="二、语法-1"><a href="#二、语法-1" class="headerlink" title="二、语法"></a>二、语法</h4><p>查询语句1</p>
+<pre><code>union 【all】</code></pre><p>查询语句2</p>
+<pre><code>union 【all】</code></pre><p>…</p>
+<h4 id="三、意义"><a href="#三、意义" class="headerlink" title="三、意义"></a>三、意义</h4><pre><code>1、将一条比较复杂的查询语句拆分成多条语句
+2、适用于查询多个表的时候，查询的列基本是一致</code></pre><h4 id="四、特点"><a href="#四、特点" class="headerlink" title="四、特点"></a>四、特点</h4><pre><code>1、要求多条查询语句的查询列数必须一致
+2、要求多条查询语句的查询的各列类型、顺序最好一致
+3、union 去重，union all包含重复项</code></pre><h3 id="查询总结"><a href="#查询总结" class="headerlink" title="查询总结"></a>查询总结</h3><h4 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h4><pre><code>select 查询列表    ⑦
+from 表1 别名       ①
+连接类型 join 表2   ②
+on 连接条件         ③
+where 筛选          ④
+group by 分组列表   ⑤
+having 筛选         ⑥
+order by排序列表    ⑧
+limit 起始条目索引，条目数;  ⑨</code></pre><h3 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h3><h4 id="一、方式一"><a href="#一、方式一" class="headerlink" title="一、方式一"></a>一、方式一</h4><p>语法：</p>
+<pre><code>insert into 表名(字段名,...) values(值,...);</code></pre><p>特点：<br>1、要求值的类型和字段的类型要一致或兼容<br>2、字段的个数和顺序不一定与原始表中的字段个数和顺序一致<br>但必须保证值和字段一一对应<br>3、假如表中有可以为null的字段，注意可以通过以下两种方式插入null值</p>
+<pre><code>①字段和值都省略
+②字段写上，值使用null</code></pre><p>4、字段和值的个数必须一致<br>5、字段名可以省略，默认所有列</p>
+<h4 id="二、方式二"><a href="#二、方式二" class="headerlink" title="二、方式二"></a>二、方式二</h4><p>语法：</p>
+<pre><code>insert into 表名 set 字段=值,字段=值,...;</code></pre><p>两种方式 的区别：<br>1.方式一支持一次插入多行，语法如下：</p>
+<pre><code>insert into 表名【(字段名,..)】 values(值，..),(值，...),...;</code></pre><p>2.方式一支持子查询，语法如下：</p>
+<pre><code>insert into 表名
+查询语句;</code></pre><h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><h4 id="一、修改单表的记录-★"><a href="#一、修改单表的记录-★" class="headerlink" title="一、修改单表的记录 ★"></a>一、修改单表的记录 ★</h4><pre><code>语法：update 表名 set 字段=值,字段=值 【where 筛选条件】;</code></pre><h4 id="二、修改多表的记录【补充】"><a href="#二、修改多表的记录【补充】" class="headerlink" title="二、修改多表的记录【补充】"></a>二、修改多表的记录【补充】</h4><p>语法：</p>
+<pre><code>update 表1 别名 
+    left|right|inner join 表2 别名 
+    on 连接条件  
+    set 字段=值,字段=值 
+    【where 筛选条件】;</code></pre><h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><h4 id="方式一：使用delete"><a href="#方式一：使用delete" class="headerlink" title="方式一：使用delete"></a>方式一：使用delete</h4><h5 id="一、删除单表的记录★"><a href="#一、删除单表的记录★" class="headerlink" title="一、删除单表的记录★"></a>一、删除单表的记录★</h5><p>语法：</p>
+<pre><code>delete from 表名 【where 筛选条件】【limit 条目数】</code></pre><h5 id="二、级联删除-补充"><a href="#二、级联删除-补充" class="headerlink" title="二、级联删除[补充]"></a>二、级联删除[补充]</h5><p>语法：</p>
+<pre><code>delete 别名1,别名2 from 表1 别名 
+    inner|left|right join 表2 别名 
+    on 连接条件
+     【where 筛选条件】</code></pre><h4 id="方式二：使用truncate"><a href="#方式二：使用truncate" class="headerlink" title="方式二：使用truncate"></a>方式二：使用truncate</h4><p>语法：</p>
+<pre><code>truncate table 表名</code></pre><h5 id="两种方式的区别【面试题】★"><a href="#两种方式的区别【面试题】★" class="headerlink" title="两种方式的区别【面试题】★"></a>两种方式的区别【面试题】★</h5><pre><code>1.truncate删除后，如果再插入，标识列从1开始
+  delete删除后，如果再插入，标识列从断点开始</code></pre><pre><code>2.delete可以添加筛选条件
+ truncate不可以添加筛选条件</code></pre><pre><code>3.truncate效率较高</code></pre><pre><code>4.truncate没有返回值
+delete可以返回受影响的行数</code></pre><pre><code>5.truncate不可以回滚
+delete可以回滚</code></pre><h3 id="库的管理"><a href="#库的管理" class="headerlink" title="库的管理"></a>库的管理</h3><h4 id="一、创建库"><a href="#一、创建库" class="headerlink" title="一、创建库"></a>一、创建库</h4><pre><code>create database 【if not exists】 库名【 character set 字符集名】;</code></pre><h4 id="二、修改库"><a href="#二、修改库" class="headerlink" title="二、修改库"></a>二、修改库</h4><pre><code>alter database 库名 character set 字符集名;</code></pre><h4 id="三、删除库"><a href="#三、删除库" class="headerlink" title="三、删除库"></a>三、删除库</h4><pre><code>drop database 【if exists】 库名;</code></pre><h3 id="表的管理"><a href="#表的管理" class="headerlink" title="表的管理"></a>表的管理</h3><h4 id="一、创建表-★"><a href="#一、创建表-★" class="headerlink" title="一、创建表 ★"></a>一、创建表 ★</h4><pre><code>create table 【if not exists】 表名(
+    字段名 字段类型 【约束】,
+    字段名 字段类型 【约束】,
+    。。。
+    字段名 字段类型 【约束】 
+
+)</code></pre><h4 id="二、修改表"><a href="#二、修改表" class="headerlink" title="二、修改表"></a>二、修改表</h4><p>1.添加列</p>
+<pre><code>alter table 表名 add column 列名 类型 【first|after 字段名】;</code></pre><p>2.修改列的类型或约束</p>
+<pre><code>alter table 表名 modify column 列名 新类型 【新约束】;</code></pre><p>3.修改列名</p>
+<pre><code>alter table 表名 change column 旧列名 新列名 类型;</code></pre><p>4 .删除列</p>
+<pre><code>alter table 表名 drop column 列名;</code></pre><p>5.修改表名</p>
+<pre><code>alter table 表名 rename 【to】 新表名;</code></pre><h4 id="三、删除表"><a href="#三、删除表" class="headerlink" title="三、删除表"></a>三、删除表</h4><pre><code>drop table【if exists】 表名;</code></pre><h4 id="四、复制表"><a href="#四、复制表" class="headerlink" title="四、复制表"></a>四、复制表</h4><p>1、复制表的结构</p>
+<pre><code>create table 表名 like 旧表;</code></pre><p>2、复制表的结构+数据</p>
+<pre><code>create table 表名 
+select 查询列表 from 旧表【where 筛选】;</code></pre><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="一、数值型"><a href="#一、数值型" class="headerlink" title="一、数值型"></a>一、数值型</h4><h5 id="1、整型"><a href="#1、整型" class="headerlink" title="1、整型"></a>1、整型</h5><table>
+<thead>
+<tr>
+<th align="center">tinyint</th>
+<th align="center">smallint</th>
+<th align="center">mediumint</th>
+<th align="center">int/integer</th>
+<th align="center">bigint</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">4</td>
+<td align="center">8</td>
+</tr>
+</tbody></table>
+<p>特点：<br>①都可以设置无符号和有符号，默认有符号，通过unsigned设置无符号<br>②如果超出了范围，会报out or range异常，插入临界值<br>③长度可以不指定，默认会有一个长度<br>长度代表显示的最大宽度，如果不够则左边用0填充，但需要搭配zerofill，并且默认变为无符号整型</p>
+<h5 id="2、浮点型"><a href="#2、浮点型" class="headerlink" title="2、浮点型"></a>2、浮点型</h5><pre><code>定点数：decimal(M,D)
+浮点数:
+    float(M,D)   4
+    double(M,D)  8</code></pre><p>特点：<br>①M代表整数部位+小数部位的个数，D代表小数部位<br>②如果超出范围，则报out or range异常，并且插入临界值<br>③M和D都可以省略，但对于定点数，M默认为10，D默认为0<br>④如果精度要求较高，则优先考虑使用定点数</p>
+<h4 id="二、字符型"><a href="#二、字符型" class="headerlink" title="二、字符型"></a>二、字符型</h4><table>
+<thead>
+<tr>
+<th align="center">char</th>
+<th align="center">varchar</th>
+<th align="center">binary</th>
+<th align="center">varbinary</th>
+<th align="center">enum</th>
+<th align="center">set</th>
+<th align="center">text</th>
+<th align="center">blob</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>char：固定长度的字符，写法为char(M)，最大长度不能超过M，其中M可以省略，默认为1<br>varchar：可变长度的字符，写法为varchar(M)，最大长度不能超过M，其中M不可以省略</p>
+<h4 id="三、日期型"><a href="#三、日期型" class="headerlink" title="三、日期型"></a>三、日期型</h4><table>
+<thead>
+<tr>
+<th align="center">year</th>
+<th align="center">年</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">date</td>
+<td align="center">日期</td>
+</tr>
+<tr>
+<td align="center">time</td>
+<td align="center">时间</td>
+</tr>
+<tr>
+<td align="center">datetime</td>
+<td align="center">日期+时间</td>
+</tr>
+<tr>
+<td align="center">timestamp</td>
+<td align="center">日期+时间</td>
+</tr>
+</tbody></table>
+<h3 id="常见的约束"><a href="#常见的约束" class="headerlink" title="常见的约束"></a>常见的约束</h3><h4 id="一、常见的约束"><a href="#一、常见的约束" class="headerlink" title="一、常见的约束"></a>一、常见的约束</h4><table>
+<thead>
+<tr>
+<th align="center">NOT NULL</th>
+<th align="center">非空，该字段的值必填</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">UNIQUE</td>
+<td align="center">唯一，该字段的值不可重复</td>
+</tr>
+<tr>
+<td align="center">DEFAULT</td>
+<td align="center">默认，该字段的值不用手动插入有默认值</td>
+</tr>
+<tr>
+<td align="center">CHECK</td>
+<td align="center">检查，mysql不支持</td>
+</tr>
+<tr>
+<td align="center">PRIMARY KEY</td>
+<td align="center">主键，该字段的值不可重复并且非空  unique+not null</td>
+</tr>
+<tr>
+<td align="center">FOREIGN KEY</td>
+<td align="center">外键，该字段的值引用了另外的表的字段</td>
+</tr>
+</tbody></table>
+<p>主键和唯一<br>1、区别：</p>
+<pre><code>①、一个表至多有一个主键，但可以有多个唯一
+②、主键不允许为空，唯一可以为空</code></pre><p>2、相同点</p>
+<pre><code>都具有唯一性
+都支持组合键，但不推荐</code></pre><p>外键：<br>1、用于限制两个表的关系，从表的字段值引用了主表的某字段值<br>2、外键列和主表的被引用列要求类型一致，意义一样，名称无要求<br>3、主表的被引用列要求是一个key（一般就是主键）<br>4、插入数据，先插入主表<br>删除数据，先删除从表<br>可以通过以下两种方式来删除主表的记录</p>
+<pre><code>#方式一：级联删除
+ALTER TABLE stuinfo ADD CONSTRAINT fk_stu_major FOREIGN KEY(majorid) REFERENCES major(id) ON DELETE CASCADE;</code></pre><pre><code>#方式二：级联置空
+ALTER TABLE stuinfo ADD CONSTRAINT fk_stu_major FOREIGN KEY(majorid) REFERENCES major(id) ON DELETE SET NULL;</code></pre><h4 id="二、创建表时添加约束"><a href="#二、创建表时添加约束" class="headerlink" title="二、创建表时添加约束"></a>二、创建表时添加约束</h4><pre><code>create table 表名(
+    字段名 字段类型 not null,#非空
+    字段名 字段类型 primary key,#主键
+    字段名 字段类型 unique,#唯一
+    字段名 字段类型 default 值,#默认
+    constraint 约束名 foreign key(字段名) references 主表（被引用列）
+
+)</code></pre><p><strong>注意：</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">支持类型</th>
+<th align="center">可以起约束名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">列级约束</td>
+<td align="center">除了外键</td>
+<td align="center">不可以</td>
+</tr>
+<tr>
+<td align="center">表级约束</td>
+<td align="center">除了非空和默认</td>
+<td align="center">可以，但对主键无效</td>
+</tr>
+</tbody></table>
+<p>列级约束可以在一个字段上追加多个，中间用空格隔开，没有顺序要求</p>
+<h4 id="三、修改表时添加或删除约束"><a href="#三、修改表时添加或删除约束" class="headerlink" title="三、修改表时添加或删除约束"></a>三、修改表时添加或删除约束</h4><p>1、非空</p>
+<pre><code>添加非空
+alter table 表名 modify column 字段名 字段类型 not null;</code></pre><pre><code>删除非空
+alter table 表名 modify column 字段名 字段类型 ;</code></pre><p>2、默认</p>
+<pre><code>添加默认
+alter table 表名 modify column 字段名 字段类型 default 值;</code></pre><pre><code>删除默认
+alter table 表名 modify column 字段名 字段类型 ;</code></pre><p>3、主键</p>
+<pre><code>添加主键
+alter table 表名 add【 constraint 约束名】 primary key(字段名);</code></pre><pre><code>删除主键
+alter table 表名 drop primary key;</code></pre><p>4、唯一</p>
+<pre><code>添加唯一
+alter table 表名 add【 constraint 约束名】 unique(字段名);</code></pre><pre><code>删除唯一
+alter table 表名 drop index 索引名;</code></pre><p>5、外键</p>
+<pre><code>添加外键
+alter table 表名 add【 constraint 约束名】 foreign key(字段名) references 主表（被引用列）;</code></pre><pre><code>删除外键
+alter table 表名 drop foreign key 约束名;</code></pre><h4 id="四、自增长列"><a href="#四、自增长列" class="headerlink" title="四、自增长列"></a>四、自增长列</h4><p>特点：<br>1、不用手动插入值，可以自动提供序列值，默认从1开始，步长为1</p>
+<pre><code>auto_increment_increment
+如果要更改起始值：手动插入值
+如果要更改步长：更改系统变量
+set auto_increment_increment=值;</code></pre><p>2、一个表至多有一个自增长列<br>3、自增长列只能支持数值型<br>4、自增长列必须为一个key</p>
+<h5 id="一、创建表时设置自增长列"><a href="#一、创建表时设置自增长列" class="headerlink" title="一、创建表时设置自增长列"></a>一、创建表时设置自增长列</h5><pre><code>create table 表(
+    字段名 字段类型 约束 auto_increment
+)</code></pre><h5 id="二、修改表时设置自增长列"><a href="#二、修改表时设置自增长列" class="headerlink" title="二、修改表时设置自增长列"></a>二、修改表时设置自增长列</h5><pre><code>alter table 表 modify column 字段名 字段类型 约束 auto_increment</code></pre><h5 id="三、删除自增长列"><a href="#三、删除自增长列" class="headerlink" title="三、删除自增长列"></a>三、删除自增长列</h5><pre><code>alter table 表 modify column 字段名 字段类型 约束 </code></pre><h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><h4 id="一、含义-3"><a href="#一、含义-3" class="headerlink" title="一、含义"></a>一、含义</h4><p>事务：一条或多条sql语句组成一个执行单位，一组sql语句要么都执行要么都不执行</p>
+<h4 id="二、特点（ACID）"><a href="#二、特点（ACID）" class="headerlink" title="二、特点（ACID）"></a>二、特点（ACID）</h4><pre><code>A 原子性：一个事务是不可再分割的整体，要么都执行要么都不执行
+C 一致性：一个事务可以使数据从一个一致状态切换到另外一个一致的状态
+I 隔离性：一个事务不受其他事务的干扰，多个事务互相隔离的
+D 持久性：一个事务一旦提交了，则永久的持久化到本地</code></pre><h4 id="三、事务的使用步骤-★"><a href="#三、事务的使用步骤-★" class="headerlink" title="三、事务的使用步骤 ★"></a>三、事务的使用步骤 ★</h4><p>了解：<br>隐式（自动）事务：没有明显的开启和结束，本身就是一条事务可以自动提交，比如insert、update、delete<br>显式事务：具有明显的开启和结束</p>
+<p>使用显式事务：<br>①开启事务</p>
+<pre><code>set autocommit=0;
+start transaction;#可以省略</code></pre><p>②编写一组逻辑sql语句</p>
+<pre><code>注意：sql语句支持的是insert、update、delete</code></pre><pre><code>设置回滚点：
+savepoint 回滚点名;</code></pre><p>③结束事务</p>
+<pre><code>提交：commit;
+回滚：rollback;
+回滚到指定的地方：rollback to 回滚点名;</code></pre><h4 id="四、并发事务"><a href="#四、并发事务" class="headerlink" title="四、并发事务"></a>四、并发事务</h4><p>1、事务的并发问题是如何发生的？<br>多个事务 同时 操作 同一个数据库的相同数据时<br>2、并发问题都有哪些？<br>脏读：一个事务读取了其他事务还没有提交的数据，读到的是其他事务“更新”的数据<br>不可重复读：一个事务多次读取，结果不一样<br>幻读：一个事务读取了其他事务还没有提交的数据，只是读到的是 其他事务“插入”的数据<br>3、如何解决并发问题<br>通过设置隔离级别来解决并发问题<br>4、<strong>隔离级别</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">脏读</th>
+<th align="center">不可重复读</th>
+<th align="center">幻读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">read uncommitted（读未提交）</td>
+<td align="center">×</td>
+<td align="center">×</td>
+<td align="center">×</td>
+</tr>
+<tr>
+<td align="center">read committed（读已提交）</td>
+<td align="center">√</td>
+<td align="center">×</td>
+<td align="center">×</td>
+</tr>
+<tr>
+<td align="center">repeatable read（可重复读）</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">×</td>
+</tr>
+<tr>
+<td align="center">serializable（串行化）</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+</tbody></table>
+<h3 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h3><h4 id="一、含义-4"><a href="#一、含义-4" class="headerlink" title="一、含义"></a>一、含义</h4><p>mysql5.1版本出现的新特性，本身是一个虚拟表，它的数据来自于表，通过执行时动态生成。<br>好处：<br>1、简化sql语句<br>2、提高了sql的重用性<br>3、保护基表的数据，提高了安全性</p>
+<h4 id="二、创建"><a href="#二、创建" class="headerlink" title="二、创建"></a>二、创建</h4><pre><code>create view 视图名
+as
+查询语句;</code></pre><h4 id="三、修改"><a href="#三、修改" class="headerlink" title="三、修改"></a>三、修改</h4><pre><code>方式一：
+create or replace view 视图名
+as
+查询语句;</code></pre><pre><code>方式二：
+alter view 视图名
+as
+查询语句</code></pre><h4 id="四、删除"><a href="#四、删除" class="headerlink" title="四、删除"></a>四、删除</h4><pre><code>drop view 视图1，视图2,...;</code></pre><h4 id="五、查看"><a href="#五、查看" class="headerlink" title="五、查看"></a>五、查看</h4><pre><code>desc 视图名;
+show create view 视图名;</code></pre><h4 id="六、使用"><a href="#六、使用" class="headerlink" title="六、使用"></a>六、使用</h4><table>
+<thead>
+<tr>
+<th align="center">插入</th>
+<th align="center">insert</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">修改</td>
+<td align="center">update</td>
+</tr>
+<tr>
+<td align="center">删除</td>
+<td align="center">delete</td>
+</tr>
+<tr>
+<td align="center">查看</td>
+<td align="center">select</td>
+</tr>
+</tbody></table>
+<p>注意：视图一般用于查询的，而不是更新的，所以具备以下特点的视图都不允许更新</p>
+<pre><code>①包含分组函数、group by、distinct、having、union、
+②join
+③常量视图
+④where后的子查询用到了from中的表
+⑤用到了不可更新的视图</code></pre><h4 id="七、视图和表的对比"><a href="#七、视图和表的对比" class="headerlink" title="七、视图和表的对比"></a>七、视图和表的对比</h4><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">关键字</th>
+<th align="center">是否占用物理空间</th>
+<th align="center">使用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">视图</td>
+<td align="center">view</td>
+<td align="center">占用较小，只保存sql逻辑</td>
+<td align="center">一般用于查询</td>
+</tr>
+<tr>
+<td align="center">表</td>
+<td align="center">table</td>
+<td align="center">保存实际的数据</td>
+<td align="center">增删改查</td>
+</tr>
+</tbody></table>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>分类</p>
+<h4 id="一、系统变量"><a href="#一、系统变量" class="headerlink" title="一、系统变量"></a>一、系统变量</h4><p>说明：变量由系统提供的，不用自定义<br>语法：<br>①查看系统变量</p>
+<pre><code>show 【global|session 】variables like &#39;&#39;; 如果没有显式声明global还是session，则默认是session</code></pre><p>②查看指定的系统变量的值</p>
+<pre><code>select @@【global|session】.变量名; 如果没有显式声明global还是session，则默认是session</code></pre><p>③为系统变量赋值<br>方式一：</p>
+<pre><code>set 【global|session 】 变量名=值; 如果没有显式声明global还是session，则默认是session</code></pre><p>方式二：</p>
+<pre><code>set @@global.变量名=值;
+set @@变量名=值；</code></pre><p>1、全局变量<br>服务器层面上的，必须拥有super权限才能为系统变量赋值，作用域为整个服务器，也就是针对于所有连接（会话）有效</p>
+<p>2、会话变量<br>服务器为每一个连接的客户端都提供了系统变量，作用域为当前的连接（会话）</p>
+<h4 id="二、自定义变量"><a href="#二、自定义变量" class="headerlink" title="二、自定义变量"></a>二、自定义变量</h4><p>说明：<br>1、用户变量</p>
+<pre><code>作用域：针对于当前连接（会话）生效
+位置：begin end里面，也可以放在外面</code></pre><p>使用：</p>
+<p>①声明并赋值：</p>
+<pre><code>set @变量名=值;或
+set @变量名:=值;或
+select @变量名:=值;</code></pre><p>②更新值<br>方式一：</p>
+<pre><code>set @变量名=值;或
+    set @变量名:=值;或
+    select @变量名:=值;</code></pre><p>方式二：</p>
+<pre><code>select xx into @变量名 from 表;</code></pre><p>③使用</p>
+<pre><code>select @变量名;</code></pre><p>2、局部变量<br>作用域：仅仅在定义它的begin end中有效<br>位置：只能放在begin end中，而且只能放在第一句<br>使用：<br>①声明</p>
+<pre><code>declare 变量名 类型 【default 值】;</code></pre><p>②赋值或更新<br>方式一：</p>
+<pre><code>set 变量名=值;或
+    set 变量名:=值;或
+    select @变量名:=值;</code></pre><p>方式二：</p>
+<pre><code>select xx into 变量名 from 表;</code></pre><p>③使用</p>
+<pre><code>select 变量名;    </code></pre><h3 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h3><h4 id="一、创建-★"><a href="#一、创建-★" class="headerlink" title="一、创建 ★"></a>一、创建 ★</h4><pre><code>create procedure 存储过程名(参数模式 参数名 参数类型)
+begin
+        存储过程体
+end</code></pre><p>注意：</p>
+<pre><code>1.参数模式：in、out、inout，其中in可以省略
+2.存储过程体的每一条sql语句都需要用分号结尾</code></pre><h4 id="二、调用"><a href="#二、调用" class="headerlink" title="二、调用"></a>二、调用</h4><pre><code>call 存储过程名(实参列表)
+举例：
+调用in模式的参数：call sp1（‘值’）;
+调用out模式的参数：set @name; call sp1(@name);select @name;
+调用inout模式的参数：set @name=值; call sp1(@name); select @name;</code></pre><h4 id="三、查看"><a href="#三、查看" class="headerlink" title="三、查看"></a>三、查看</h4><pre><code>show create procedure 存储过程名;</code></pre><h4 id="四、删除-1"><a href="#四、删除-1" class="headerlink" title="四、删除"></a>四、删除</h4><pre><code>drop procedure 存储过程名;        </code></pre><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h4 id="一、创建"><a href="#一、创建" class="headerlink" title="一、创建"></a>一、创建</h4><pre><code>create function 函数名(参数名 参数类型) returns  返回类型
+begin
+    函数体
+end</code></pre><p>注意：函数体中肯定需要有return语句</p>
+<h4 id="二、调用-1"><a href="#二、调用-1" class="headerlink" title="二、调用"></a>二、调用</h4><pre><code>select 函数名(实参列表);</code></pre><h4 id="三、查看-1"><a href="#三、查看-1" class="headerlink" title="三、查看"></a>三、查看</h4><pre><code>show create function 函数名;</code></pre><h4 id="四、删除-2"><a href="#四、删除-2" class="headerlink" title="四、删除"></a>四、删除</h4><pre><code>drop function 函数名；</code></pre><h3 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h3><p>特点：<br>1、if函数</p>
+<pre><code>功能：实现简单双分支
+语法：
+if(条件，值1，值2)
+位置：
+可以作为表达式放在任何位置</code></pre><p>2、case结构<br>功能：实现多分支</p>
+<pre><code>语法1：
+case 表达式或字段
+when 值1 then 语句1;
+when 值2 then 语句2；
+..
+else 语句n;
+end [case];</code></pre><p>语法2：</p>
+<pre><code>case 
+when 条件1 then 语句1;
+when 条件2 then 语句2；
+..
+else 语句n;
+end [case];</code></pre><p>位置：</p>
+<pre><code>可以放在任何位置，
+如果放在begin end 外面，作为表达式结合着其他语句使用
+如果放在begin end 里面，一般作为独立的语句使用</code></pre><p>3、if结构</p>
+<p>位置：<br>只能放在begin end中                                                </p>
+<pre><code>功能：实现多分支
+语法：
+if 条件1 then 语句1;
+elseif 条件2 then 语句2;
+...
+else 语句n;
+end if;</code></pre><p>位置：</p>
+<pre><code>只能放在begin end中            </code></pre><h3 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h3><p>位置：</p>
+<pre><code>只能放在begin end中</code></pre><p>特点：都能实现循环结构</p>
+<p>对比：</p>
+<p>①这三种循环都可以省略名称，但如果循环中添加了循环控制语句（leave或iterate）则必须添加名称<br>②loop 一般用于实现简单的死循环<br>while 先判断后执行<br>repeat 先执行后判断，无条件至少执行一次</p>
+<p>1、while<br>语法：</p>
+<pre><code>【名称:】while 循环条件 do
+        循环体
+end while 【名称】;</code></pre><p>2、loop<br>语法：</p>
+<pre><code>【名称：】loop
+        循环体
+end loop 【名称】;</code></pre><p>3、repeat<br>语法：</p>
+<pre><code>【名称:】repeat
+        循环体
+until 结束条件 
+end repeat 【名称】;</code></pre><p>循环控制语句</p>
+<pre><code>leave：类似于break，用于跳出所在的循环
+iterate：类似于continue，用于结束本次循环，继续下一次                                    </code></pre>
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力!</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/yu.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+            
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://noom.ml" class="b-link-green">奇遇少年</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/posts/databasenotes.html" class="b-link-green">mysql数据库笔记</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+    /* valine 评论框增加背景图片 */
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("http://www.luckyzmj.cn/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments .vwrap {
+        box-sizing: border-box;
+        padding: 0 0 44px;
+        background-color: #F0FFF0;
+    }
+    #vcomments .vwrap .vheader{width: 80%;bottom:0;position: absolute;background: #F0FFF0;}
+
+    #vcomments .vinput{padding:10px 15px; text-align: center;}
+
+    #vcomments .vwrap .vheader .vinput{border-bottom:0px}
+
+    #vcomments .vwrap .vedit .vctrl{margin-top:-44px;right:0;position:absolute;margin-right:-3px;}
+
+    #vcomments  .vwrap .vrow{position:absolute;right:0;bottom:0;width:20%;padding-top:0px;}
+
+    #vcomments  .vrow {font-size: 0;padding: 0px 0;}
+
+    #vcomments  .vicon {margin-right: 15px;}
+
+    #vcomments  .vrow .vcol.vcol-30{display: none}
+
+    #vcomments  .vedit .vctrl span.vpreview-btn{display: none}
+
+    #vcomments  .vrow .vcol.vcol-70{width: 100%;}
+
+    #vcomments  .vsubmit.vbtn{border-radius: 0;padding: 0;color: #fff;line-height: 44px;width:100%;border: none;background:#00ecbc;}
+
+    #vcomments  .vcards .vcard .vh .vhead .vsys{background: #F0FFF0;}
+
+    #vcomments  .vcards .vcard .vh .vmeta .vat{font-size: 12px;display: block;margin-left: 15px;float: right;color: #fff;background-color: #00ecbc;line-height: 20px;padding: 0 6px;border-radius: 3px;}
+
+    @media screen and (max-width: 520px){
+    #vcomments  .vwrap .vheader .vinput{width: 33.33%;padding:10px 5px;}  
+    }
+
+    #vcomments input[type=text],
+
+    #vcomments input[type=email],
+
+    #vcomments input[type=url],
+
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+    #vcomments .vwrap p {
+        height: 20px;
+        width: 20px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    /* 修复评论第一行位置错位 */
+    .v .vlist .vcard {
+    padding-top: 2.5em !important ;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        admin_email: '16463223@qq.com',
+        appId: '29CoaEQR7y5QoBkdckdLKS1m-MdYXbMMI',
+        appKey: 'bdx6TMyT6WDFMBhIUIOWFnX0',
+        path: window.location.pathname,
+        comment_count: true,
+        notify: 'false' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go',
+
+    });
+    $(document).ready(function(){
+        $("#vcomments").on('click', 'span.vat',function(){
+            $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+            $('textarea#veditor').focus();
+        })
+    })
+</script>
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+    jinrishici.load(function(result) {
+        var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author
+        document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+    });
+</script>
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/lxmusic.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/44.jpg" class="responsive-img" alt="落雪音乐助手">
+                        
+                        <span class="card-title">落雪音乐助手</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            说明落雪音乐助手是一款非常实用的免费音乐下载软件，是基于 Electron + Vue 开发的音乐软件，支持win、Mac和Linux平台，整合了市场上主流音乐软件的搜索接口，聚合各音乐平台，完善软件设计！
+所用技术栈：
+
+Electron
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-04
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/音乐篇/" class="post-category" target="_blank">
+                                    音乐篇
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Electron/" target="_blank">
+                        <span class="chip bg-color">Electron</span>
+                    </a>
+                    
+                    <a href="/tags/Vue/" target="_blank">
+                        <span class="chip bg-color">Vue</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/bestbuyplus.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/47.jpg" class="responsive-img" alt="品优购进阶版">
+                        
+                        <span class="card-title">品优购进阶版</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            品优购网上商城是一个综合性的 B2B2C 平台，类似京东商城、天猫商城。网站采用商家入驻的模式，商家入驻平台提交申请，有平台进行资质审核，审核通过后，商家拥有独立的管理后台录入商品信息。商品经过平台审核后即可发布。以下是静态源码及展示页面。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-01-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/网页源码篇/" class="post-category" target="_blank">
+                                    网页源码篇
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/HTML/" target="_blank">
+                        <span class="chip bg-color">HTML</span>
+                    </a>
+                    
+                    <a href="/tags/CSS/" target="_blank">
+                        <span class="chip bg-color">CSS</span>
+                    </a>
+                    
+                    <a href="/tags/源码/" target="_blank">
+                        <span class="chip bg-color">源码</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 奇遇少年<br />'
+            + '作者: 少年<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.bootcss.com/tocbot/4.8.1/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            
+            Copyright&copy;少年 2021
+            <!-- 备案信息配置
+            Copyright&copy; 2021 noom.ml | <a href="http://www.beian.miit.gov.cn/">备案</a>
+            <br>
+            
+             <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=备案号"><img src="http://www.luckyzmj.cn/medias/gaba.png" /> 备案号</a>
+             -->
+             <br>
+             
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+        
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+    
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">49.4k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lnoom" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=yuitge@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=1536835029&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2020, 01, 31, 00, 00, 00); //北京时间
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="https://cdn.bootcss.com/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://cdn.bootcss.com/masonry/4.0.0/masonry.pkgd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.11/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+            <script src="/libs/others/clicklove.js"></script>
+        
+
+        
+            <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+        
+
+        <script type="text/javascript">
+		/*
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "奇遇少年", clearTimeout(st)) : (document.title =
+                    "奇遇少年", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+			*/
+        </script>
+
+        <!-- 鼠标点击烟花爆炸效果 -->
+        
+
+        <!-- 背景雪花飘落特效 -->
+        
+
+        <!-- 鼠标点击文字特效 -->
+        
+            <script src="/js/wenzi.js" type="text/javascript"></script>
+        
+        
+
+        <!-- 背景雪花飘落特效 -->
+        
+            <script type="text/javascript">
+                var windowWidth = $(window).width();
+                if (windowWidth > 768) {
+                    document.write('<script type="text/javascript" src="/js/xuehuapiaoluo.js"><\/script>');
+                }
+            </script>
+        
+
+        <!-- 在线聊天工具  -->
+        
+
+        <!-- 背景 canvas-nest -->
+        
+
+        <!-- 背景静止彩带  -->
+        
+
+        <!-- 背景动态彩带 -->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 天气接口控件   -->
+        
+            <script type="text/javascript">
+            WIDGET = {FID: 'zLkJSQpqsh'}
+            </script>
+        <!-- <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script> -->
+
+        <script type="text/javascript">
+          var windowWidth = $(window).width();
+          if (windowWidth > 768) {
+              document.write('<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"><\/script>');
+          }
+        </script>
+        
+        
+          <script>
+            (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/410f202e.js","daovoice")
+  daovoice('init', {
+      app_id: "57cd2ceb"
+    });
+  daovoice('update');
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+        
+
+    <script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+</html>

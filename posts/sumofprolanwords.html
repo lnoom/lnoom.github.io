@@ -1,0 +1,4828 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+    
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="Java 编程语言单词汇总, 博客,奇遇少年,少年,奇遇少年博客,个人博客,计算机,网络安全,源代码,技术笔记,前端开发,开发者,程序员,程序猿,程序媛,极客,码农,编程,代码,软件开发">
+	<meta name="google-site-verification" content="rmV0x0t2jXsytZVmDobgZugr-tRCHLifFuwIafFXi9E">
+	<meta name="baidu-site-verification" content="code-nXmmuvg7R7">
+    <meta name="360-site-verification" content="2db45fc772bbd3e7efd0985eec0fff97">
+    <meta name="description" content="Java 是由 Sun Microsystems 公司于 1995 年 5 月推出的 Java 面向对象程序设计语言和 Java 平台的总称。由 James G">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="baidu-site-verification" content="wvlc3L96QK">
+    <title>Java 编程语言单词汇总 | 奇遇少年</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/animate.css/3.5.1/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.11/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <style type="text/css">
+        
+            
+            code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+        
+    </style>
+
+    <script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?46e79e71af0709a5b9106bf20cecc493";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+
+    <body>
+
+        <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">奇遇少年</span>
+                </a>
+            </div>
+            
+
+
+<!-- <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="" class="waves-effect waves-light">
+            
+            <i class="fa fa-heartbeat"></i>
+            
+            <span>清单</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于我</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-envelope"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tools" class="waves-effect waves-light">
+            
+            <i class="fa fa-suitcase"></i>
+            
+            <span>快捷导航</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/GoogleHacking/" class="waves-effect waves-light">
+            
+            <i class="fa fa-google"></i>
+            
+            <span>Hacking</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul> -->
+
+<!-- 支持二级菜单特性  -->
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right nav-menu">
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/" class="waves-effect waves-light">
+              
+                <i class="fa fa-home"></i>
+              
+              <span>首页</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+              <a href="" class="waves-effect waves-light">
+                
+                  <i class="fa fa-archive"></i>
+                
+                <span>归档</span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </a>
+
+            <ul class="sub-nav menus_item_child ">
+              
+                <li> 
+                  <a href="/archives" >
+                    
+                      <i class="fa fa-paper-plane" style="margin-top: -20px;"></i>
+                    
+                    <span>时轴</span>
+                  </a>
+                </li>
+              
+                <li> 
+                  <a href="/categories" >
+                    
+                      <i class="fa fa-bookmark" style="margin-top: -20px;"></i>
+                    
+                    <span>分类</span>
+                  </a>
+                </li>
+              
+                <li> 
+                  <a href="/tags" >
+                    
+                      <i class="fa fa-tags" style="margin-top: -20px;"></i>
+                    
+                    <span>标签</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+              <a href="" class="waves-effect waves-light">
+                
+                  <i class="fa fa-heartbeat"></i>
+                
+                <span>清单</span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+              </a>
+
+            <ul class="sub-nav menus_item_child ">
+              
+                <li> 
+                  <a href="/List/music" >
+                    
+                      <i class="fa fa-music" style="margin-top: -20px;"></i>
+                    
+                    <span>音乐</span>
+                  </a>
+                </li>
+              
+                <li> 
+                  <a href="/List/galleries" >
+                    
+                      <i class="fa fa-photo" style="margin-top: -20px;"></i>
+                    
+                    <span>相册</span>
+                  </a>
+                </li>
+              
+                <li> 
+                  <a href="/List/movies" >
+                    
+                      <i class="fa fa-film" style="margin-top: -20px;"></i>
+                    
+                    <span>视频</span>
+                  </a>
+                </li>
+              
+                <li> 
+                  <a href="/List" >
+                    
+                      <i class="fa fa-coffee" style="margin-top: -20px;"></i>
+                    
+                    <span>休闲</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/about" class="waves-effect waves-light">
+              
+                <i class="fa fa-user-circle-o"></i>
+              
+              <span>关于我</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/contact" class="waves-effect waves-light">
+              
+                <i class="fa fa-envelope"></i>
+              
+              <span>留言板</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/tools" class="waves-effect waves-light">
+              
+                <i class="fa fa-suitcase"></i>
+              
+              <span>快捷导航</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/friends" class="waves-effect waves-light">
+              
+                <i class="fa fa-address-book"></i>
+              
+              <span>友情链接</span>
+            </a>
+
+            
+      </li>
+    
+      <li class="hide-on-med-and-down nav-item" >
+
+        
+            <a href="/GoogleHacking/" class="waves-effect waves-light">
+              
+                <i class="fa fa-google"></i>
+              
+              <span>Hacking</span>
+            </a>
+
+            
+      </li>
+    
+
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">奇遇少年</div>
+        <div class="logo-desc">
+            
+            一个正在追梦的少年，陪有梦想的你一起成长。关注网站前端学习与制作，分享交流网站制作经验和技巧，打造自己专属的网站，让你的博客与众不同！
+            
+        </div>
+    </div>
+
+    
+<!-- 支持一级菜单特性 -->
+<!--    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-heartbeat"></i>
+                
+                清单
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于我
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-envelope"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tools" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-suitcase"></i>
+                
+                快捷导航
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/GoogleHacking/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-google"></i>
+                
+                Hacking
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/lnoom/lnoom.github.io.git" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> -->
+
+   
+   
+<!-- 支持二级菜单特性  -->
+ <ul class="menu-list mobile-menu-list">
+    
+        <li class="m-nav-item">
+                
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-home"></i>
+                        
+                        首页
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="javascript:;">
+                            
+                            <i class="fa fa-fw fa-archive"></i>
+                            
+                            归档
+                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+                    </a>
+                <ul>
+                  
+                    <li> 
+                      <a href="/archives" >
+                           
+                            <i class="fa fa-paper-plane" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>时轴</span>
+                      </a>
+                    </li>
+                  
+                    <li> 
+                      <a href="/categories" >
+                           
+                            <i class="fa fa-bookmark" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>分类</span>
+                      </a>
+                    </li>
+                  
+                    <li> 
+                      <a href="/tags" >
+                           
+                            <i class="fa fa-tags" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>标签</span>
+                      </a>
+                    </li>
+                   
+                </ul>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="javascript:;">
+                            
+                            <i class="fa fa-fw fa-heartbeat"></i>
+                            
+                            清单
+                            <span class="m-icon"><i class="fa fa-chevron-right"></i></span>
+                    </a>
+                <ul>
+                  
+                    <li> 
+                      <a href="/List/music" >
+                           
+                            <i class="fa fa-music" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>音乐</span>
+                      </a>
+                    </li>
+                  
+                    <li> 
+                      <a href="/List/galleries" >
+                           
+                            <i class="fa fa-photo" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>相册</span>
+                      </a>
+                    </li>
+                  
+                    <li> 
+                      <a href="/List/movies" >
+                           
+                            <i class="fa fa-film" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>视频</span>
+                      </a>
+                    </li>
+                  
+                    <li> 
+                      <a href="/List" >
+                           
+                            <i class="fa fa-coffee" style="left: 18px; position: absolute;"></i>
+                       
+                       <span>休闲</span>
+                      </a>
+                    </li>
+                   
+                </ul>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/about" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-user-circle-o"></i>
+                        
+                        关于我
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/contact" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-envelope"></i>
+                        
+                        留言板
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/tools" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-suitcase"></i>
+                        
+                        快捷导航
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/friends" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-address-book"></i>
+                        
+                        友情链接
+                    </a>
+              
+            </li>
+        
+        <li class="m-nav-item">
+                
+                    <a href="/GoogleHacking/" class="waves-effect waves-light">
+                        
+                        <i class="fa fa-fw fa-google"></i>
+                        
+                        Hacking
+                    </a>
+              
+            </li>
+        
+
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/lnoom/lnoom.github.io.git" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul> 
+
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/lnoom/lnoom.github.io.git" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+        
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Java 编程语言单词汇总
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.bootcss.com/tocbot/4.8.1/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+        width: 345px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        margin-bottom: 20px;
+    }
+    
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        
+<!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/java/" target="_blank">
+                                <span class="chip bg-color">java</span>
+                            </a>
+                        
+                            <a href="/tags/programingLanguage/" target="_blank">
+                                <span class="chip bg-color">programingLanguage</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/java篇/" class="post-category" target="_blank">
+                                java篇
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-02-12
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                        少年
+                    
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        7.3k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        33 分
+                    </div>
+                    
+                
+                
+                
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv" ></span>
+    
+                
+
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>Java 是由 Sun Microsystems 公司于 1995 年 5 月推出的 Java 面向对象程序设计语言和 Java 平台的总称。由 James Gosling和同事们共同研发，并在 1995 年正式推出。后来 Sun 公司被 Oracle （甲骨文）公司收购，Java 也随之成为 Oracle 公司的产品。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://gitee.com/kuiler/imgaes/raw/master/img/java01.jpg" alt></p>
+<h3 id="The-first-stage"><a href="#The-first-stage" class="headerlink" title="The first stage"></a>The first stage</h3><table>
+<thead>
+<tr>
+<th align="center">JDK</th>
+<th align="center">abbr. Java 开发工具包（Java Development Kit） （abbr.缩写）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">JRE</td>
+<td align="center">abbr. Java 运行环境（Java Runtime Environment）</td>
+</tr>
+<tr>
+<td align="center">JVM</td>
+<td align="center">abbr. Java 虚拟机（Java Virtual Machine）</td>
+</tr>
+<tr>
+<td align="center">system [‘sɪstəm] <strong>System</strong></td>
+<td align="center">n. 制度，系统；</td>
+</tr>
+<tr>
+<td align="center">out [aʊt]</td>
+<td align="center">adj. 外面的；出去</td>
+</tr>
+<tr>
+<td align="center">println</td>
+<td align="center">n. 换行打印（Java 语言中的命令）</td>
+</tr>
+<tr>
+<td align="center">main [meɪn]</td>
+<td align="center">n. 主方法</td>
+</tr>
+<tr>
+<td align="center">download[daʊn’ləʊd]</td>
+<td align="center">vt. [计] 下载</td>
+</tr>
+<tr>
+<td align="center">path [pɑːθ]</td>
+<td align="center">n. 道路；小路；轨道；路径</td>
+</tr>
+<tr>
+<td align="center">JAVA_HOME</td>
+<td align="center">JDK 的安装根目录，例如：D:\ProgramFiles\Java\jdk1.8.0_141</td>
+</tr>
+<tr>
+<td align="center">public [‘pʌblɪk]</td>
+<td align="center">adj.公共的</td>
+</tr>
+<tr>
+<td align="center">static [‘stætɪk]</td>
+<td align="center">adj. 静态的；</td>
+</tr>
+<tr>
+<td align="center">void [vɒɪd]</td>
+<td align="center">adj. 空的；无效的；</td>
+</tr>
+<tr>
+<td align="center">string[strɪŋ] <strong>String</strong></td>
+<td align="center">n. 一串，字符串</td>
+</tr>
+<tr>
+<td align="center">args</td>
+<td align="center">n. [计算机]参数</td>
+</tr>
+<tr>
+<td align="center">class [klɑːs]</td>
+<td align="center">n. 阶级；班级；种类；类；</td>
+</tr>
+<tr>
+<td align="center">bin [bɪn]</td>
+<td align="center">n. 二进制</td>
+</tr>
+<tr>
+<td align="center">src</td>
+<td align="center">源代码，源程序，这里代表 source code</td>
+</tr>
+<tr>
+<td align="center">bit [bɪt]</td>
+<td align="center">n. [计] 比特（二进位制信息单位）；</td>
+</tr>
+<tr>
+<td align="center">byte [baɪt]</td>
+<td align="center">n. 字节；8 位元组</td>
+</tr>
+</tbody></table>
+<h3 id="Advanced-one"><a href="#Advanced-one" class="headerlink" title="Advanced one"></a>Advanced one</h3><table>
+<thead>
+<tr>
+<th align="center">command [kə’mɑːnd]</th>
+<th align="center">vi. 命令，控制</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">compile [kəm’paɪl]</td>
+<td align="center">vt. 编译；编辑；</td>
+</tr>
+<tr>
+<td align="center">language [‘læŋgwɪdʒ]</td>
+<td align="center">n. 语言</td>
+</tr>
+<tr>
+<td align="center">lang [læŋ]</td>
+<td align="center">abbr. 语言（language）</td>
+</tr>
+<tr>
+<td align="center">development [dɪ’veləpm(ə)nt]</td>
+<td align="center">n. 发展；开发；</td>
+</tr>
+<tr>
+<td align="center">kit [kɪt]</td>
+<td align="center">n. 工具箱</td>
+</tr>
+<tr>
+<td align="center">machine [mə’ʃiːn]</td>
+<td align="center">n. 机械，机器；</td>
+</tr>
+<tr>
+<td align="center">Java SE</td>
+<td align="center">Java 标准版，Java Standard Edition</td>
+</tr>
+<tr>
+<td align="center">Java EE</td>
+<td align="center">Java 企业版，Java Enterprise Edition</td>
+</tr>
+<tr>
+<td align="center">Java ME</td>
+<td align="center">Java 小型版，Java Micro Edition</td>
+</tr>
+<tr>
+<td align="center">GC</td>
+<td align="center">垃圾收集机制（Garbage Collection）</td>
+</tr>
+</tbody></table>
+<h3 id="The-second-stage"><a href="#The-second-stage" class="headerlink" title="The second stage"></a>The second stage</h3><table>
+<thead>
+<tr>
+<th align="center">byte [baɪt]</th>
+<th align="center">n. 字节</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">short [ʃɔːt]</td>
+<td align="center">adj. 短的；</td>
+</tr>
+<tr>
+<td align="center">int 英 [ɪn’tɪəːrɪə(r)] 美 [ɪnt]</td>
+<td align="center">abbr. 整数</td>
+</tr>
+<tr>
+<td align="center">long [lɒŋ]</td>
+<td align="center">adj. 长的；过长的；</td>
+</tr>
+<tr>
+<td align="center">float [fləʊt]</td>
+<td align="center">单精度浮点数</td>
+</tr>
+<tr>
+<td align="center">double [‘dʌb(ə)l]</td>
+<td align="center">双精度浮点数</td>
+</tr>
+<tr>
+<td align="center">char [tʃɑː]</td>
+<td align="center">单个字符类型</td>
+</tr>
+<tr>
+<td align="center">boolean [‘bʊlɪən]</td>
+<td align="center">布尔型</td>
+</tr>
+<tr>
+<td align="center">unicode [‘juːnɪˌkəʊd]</td>
+<td align="center">n. 采用双字节对字符进行编码；统一的字符编码标准</td>
+</tr>
+<tr>
+<td align="center">ASCII [‘æski]</td>
+<td align="center">abbr. 美国信息交换标准码（American Standard Code for Information Interchange）</td>
+</tr>
+<tr>
+<td align="center">true[truː]</td>
+<td align="center">adj. 真实的；正确的</td>
+</tr>
+<tr>
+<td align="center">false [fɔːls; fɒls]</td>
+<td align="center">adj. 错误的；</td>
+</tr>
+</tbody></table>
+<h3 id="Advanced-two"><a href="#Advanced-two" class="headerlink" title="Advanced two"></a>Advanced two</h3><table>
+<thead>
+<tr>
+<th align="center">age[eɪdʒ]</th>
+<th align="center">n. 年龄；</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">name[neɪm]</td>
+<td align="center">n. 名称，名字；姓名</td>
+</tr>
+<tr>
+<td align="center">number [‘nʌmbə]</td>
+<td align="center">n. 数</td>
+</tr>
+<tr>
+<td align="center">assign [ə’saɪn]</td>
+<td align="center">vt. 分配；指派；[计][数] 赋值</td>
+</tr>
+<tr>
+<td align="center">logic [‘lɒdʒɪk]</td>
+<td align="center">adj. 逻辑的</td>
+</tr>
+<tr>
+<td align="center">arithmetic[ə’rɪθmətɪk]</td>
+<td align="center">n. 算术，算法</td>
+</tr>
+<tr>
+<td align="center">operator[‘ɒpəreɪtə]</td>
+<td align="center">[计]操作符</td>
+</tr>
+<tr>
+<td align="center">relational [rɪ’leɪʃ(ə)n(ə)l]</td>
+<td align="center">adj. 相关的；</td>
+</tr>
+<tr>
+<td align="center">relational operator</td>
+<td align="center">关系运算符</td>
+</tr>
+<tr>
+<td align="center">relational database</td>
+<td align="center">关系型数据库</td>
+</tr>
+<tr>
+<td align="center">relational expression[计]</td>
+<td align="center">关系表达式</td>
+</tr>
+<tr>
+<td align="center">variable [‘veərɪəb(ə)l]</td>
+<td align="center">dj. 变量的；可变的；易变的，多变的；</td>
+</tr>
+<tr>
+<td align="center">sum [sʌm]</td>
+<td align="center">n. 金额；总数</td>
+</tr>
+<tr>
+<td align="center">const [‘kɒnst]</td>
+<td align="center">n. 常量，常数</td>
+</tr>
+<tr>
+<td align="center">constant [‘kɒnst(ə)nt]</td>
+<td align="center">n. [数] 常数；恒量</td>
+</tr>
+<tr>
+<td align="center">initialize [ɪ’nɪʃ(ə)laɪz]</td>
+<td align="center">vt. 初始化</td>
+</tr>
+</tbody></table>
+<h3 id="The-third-stage"><a href="#The-third-stage" class="headerlink" title="The third stage"></a>The third stage</h3><table>
+<thead>
+<tr>
+<th align="center">if [ɪf]</th>
+<th align="center">conj. （表条件）如果；即使；是否；（表假设）假如</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">else[els]</td>
+<td align="center">adv. 其他；否则；另外</td>
+</tr>
+<tr>
+<td align="center">switch[swɪtʃ]</td>
+<td align="center">n. 开关；转换</td>
+</tr>
+<tr>
+<td align="center">case[keɪs]</td>
+<td align="center">n. 情况；</td>
+</tr>
+<tr>
+<td align="center">default[dɪ’fɔːlt; ‘diːfɔːlt]</td>
+<td align="center">n. 缺席；缺乏；系统默认值</td>
+</tr>
+<tr>
+<td align="center">scanner[‘skænə] Scanner</td>
+<td align="center">n. [计] 扫描仪；扫描器；</td>
+</tr>
+<tr>
+<td align="center">next [nekst]</td>
+<td align="center">adj. 下一个的；</td>
+</tr>
+<tr>
+<td align="center">import[ɪm’pɔːt; ‘ɪm-]</td>
+<td align="center">vt. 导入</td>
+</tr>
+<tr>
+<td align="center">util [ju’til]</td>
+<td align="center">代表 utility[juːˈtɪlɪtɪ] adj. 实用的；通用的；</td>
+</tr>
+<tr>
+<td align="center">in[ɪn]</td>
+<td align="center">在里面的的，输入</td>
+</tr>
+<tr>
+<td align="center">count [kaʊnt]</td>
+<td align="center">vi. 计数</td>
+</tr>
+<tr>
+<td align="center">year [jɪə; jɜː]</td>
+<td align="center">n. 年；</td>
+</tr>
+<tr>
+<td align="center">month[mʌnθ]</td>
+<td align="center">n. 月</td>
+</tr>
+<tr>
+<td align="center">day[deɪ]</td>
+<td align="center">n. 一天；时期</td>
+</tr>
+<tr>
+<td align="center">date[deɪt]</td>
+<td align="center">n. 日期</td>
+</tr>
+</tbody></table>
+<h3 id="Advanced-three"><a href="#Advanced-three" class="headerlink" title="Advanced three"></a>Advanced three</h3><table>
+<thead>
+<tr>
+<th align="center">length[leŋθ]</th>
+<th align="center">n. 长度，长；</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">height [haɪt]</td>
+<td align="center">n. 高地；高度；身高；</td>
+</tr>
+<tr>
+<td align="center">weight[weɪt]</td>
+<td align="center">n. 重量，重力；</td>
+</tr>
+<tr>
+<td align="center">radius[‘reɪdɪəs]</td>
+<td align="center">n. 半径</td>
+</tr>
+<tr>
+<td align="center">area[‘eərɪə]</td>
+<td align="center">n. 区域，地区；面积；范围</td>
+</tr>
+<tr>
+<td align="center">score [skɔː]</td>
+<td align="center">n. 分数</td>
+</tr>
+<tr>
+<td align="center">week[wiːk]</td>
+<td align="center">n. 周，星期</td>
+</tr>
+<tr>
+<td align="center">hour[‘aʊə]</td>
+<td align="center">n. 小时；</td>
+</tr>
+<tr>
+<td align="center">minute[‘mɪnɪt]</td>
+<td align="center">n. 分，分钟；</td>
+</tr>
+<tr>
+<td align="center">second[‘sek(ə)nd]</td>
+<td align="center">n. 秒；第二名</td>
+</tr>
+<tr>
+<td align="center">millisecond [‘mɪlɪsek(ə)nd]</td>
+<td align="center">n. 毫秒</td>
+</tr>
+<tr>
+<td align="center">monday [ˈmʌndeɪ; ˈmʌndi]</td>
+<td align="center">n. 星期一</td>
+</tr>
+<tr>
+<td align="center">tuesday[‘tjuːzdeɪ; -dɪ]</td>
+<td align="center">n. 星期二</td>
+</tr>
+<tr>
+<td align="center">wednesday[ˈwenzdɪ]</td>
+<td align="center">n. 星期三</td>
+</tr>
+<tr>
+<td align="center">thursday[‘θɜːzdeɪ; -dɪ]</td>
+<td align="center">n. 星期四</td>
+</tr>
+<tr>
+<td align="center">friday[ˈfraɪ.deɪ]</td>
+<td align="center">n. 星期五</td>
+</tr>
+<tr>
+<td align="center">saturday 英 [ˈsætədɪ; -deɪ]</td>
+<td align="center">n. 星期六</td>
+</tr>
+<tr>
+<td align="center">sunday [ˈsʌndeɪ; ˈsʌndi]</td>
+<td align="center">n. 星期日</td>
+</tr>
+<tr>
+<td align="center">season [‘siːz(ə)n]</td>
+<td align="center">n. 时期；季节；赛季</td>
+</tr>
+<tr>
+<td align="center">spring [sprɪŋ]</td>
+<td align="center">n. 春天</td>
+</tr>
+<tr>
+<td align="center">summer[‘sʌmə]</td>
+<td align="center">n. 夏季</td>
+</tr>
+<tr>
+<td align="center">fall[fɔːl]</td>
+<td align="center">n. 下降；秋天</td>
+</tr>
+<tr>
+<td align="center">autumn[‘ɔːtəm]n</td>
+<td align="center">秋天；成熟期</td>
+</tr>
+<tr>
+<td align="center">winter[‘wɪntə]</td>
+<td align="center">n. 冬季；</td>
+</tr>
+<tr>
+<td align="center">width [wɪtθ; wɪdθ]</td>
+<td align="center">n. 宽度；</td>
+</tr>
+</tbody></table>
+<h3 id="The-fourth-stage"><a href="#The-fourth-stage" class="headerlink" title="The fourth stage"></a>The fourth stage</h3><table>
+<thead>
+<tr>
+<th align="center">for[fə(r); fɔ:(r)]</th>
+<th align="center">prep. 为，为了；因为；给；对于；至于；适合于 conj. 因为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">while [waɪl]</td>
+<td align="center">conj. 虽然；然而；当……的时候</td>
+</tr>
+<tr>
+<td align="center">do[duː]</td>
+<td align="center">v. 做；干；</td>
+</tr>
+<tr>
+<td align="center">break [breɪk]</td>
+<td align="center">vi. 打破；折断；中断</td>
+</tr>
+<tr>
+<td align="center">continue[kən’tɪnjuː]</td>
+<td align="center">vt. 使…继续；</td>
+</tr>
+<tr>
+<td align="center">math [mæθ]</td>
+<td align="center">n. 数学（等于 mathematics）</td>
+</tr>
+<tr>
+<td align="center">random[‘rændəm] Random</td>
+<td align="center">adj. [数] 随机的；</td>
+</tr>
+<tr>
+<td align="center">first [fɜːst]</td>
+<td align="center">adv. 第一；首先；优先；宁愿;</td>
+</tr>
+<tr>
+<td align="center">sum [sʌm]</td>
+<td align="center">n. 金额；总数;</td>
+</tr>
+<tr>
+<td align="center">check [tʃek]</td>
+<td align="center">vt. 检查，核对；制止</td>
+</tr>
+</tbody></table>
+<h3 id="Advanced-four"><a href="#Advanced-four" class="headerlink" title="Advanced four"></a>Advanced four</h3><table>
+<thead>
+<tr>
+<th align="center">for loop</th>
+<th align="center">For 循环</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">for cyclic sentence</td>
+<td align="center">for 循环语句</td>
+</tr>
+<tr>
+<td align="center">for-loop structure</td>
+<td align="center">for 循环结构</td>
+</tr>
+<tr>
+<td align="center">input[‘ɪnpʊt]</td>
+<td align="center">vt. [自][电子] 输入；将…输入电脑</td>
+</tr>
+<tr>
+<td align="center">max[mæks]</td>
+<td align="center">n.最大量；最大数</td>
+</tr>
+<tr>
+<td align="center">min [mɪn]</td>
+<td align="center">代表 minimum[‘mɪnɪməm]adj. 最小的；最低的</td>
+</tr>
+<tr>
+<td align="center">temp[temp]</td>
+<td align="center">临时的</td>
+</tr>
+<tr>
+<td align="center">positive [‘pɒzɪtɪv] q</td>
+<td align="center">[数] 正的；确定的 n. 正数；</td>
+</tr>
+<tr>
+<td align="center">negative [‘negətɪv]</td>
+<td align="center">adj. [数] 负的；否定的； n. 否定；负数；</td>
+</tr>
+<tr>
+<td align="center">half [hɑːf]</td>
+<td align="center">n. 一半；半场；半学年; adv. 一半地；部分地;adj. 一半的；不完全的；半途的;</td>
+</tr>
+<tr>
+<td align="center">middle [‘mɪd(ə)l]</td>
+<td align="center">adj. 中间的，中部的；中级的，中等的;</td>
+</tr>
+<tr>
+<td align="center">show [ʃəʊ]</td>
+<td align="center">vt. 显示；说明；演出；展出 ；vi. 显示；说明</td>
+</tr>
+<tr>
+<td align="center">round [raʊnd]</td>
+<td align="center">n. 圆；循环；一回合；adj. 圆的；</td>
+</tr>
+<tr>
+<td align="center">item [‘aɪtəm]</td>
+<td align="center">n. 条款，项目</td>
+</tr>
+<tr>
+<td align="center">content [kən’tent]</td>
+<td align="center">n. 内容，目录；满足；容量;</td>
+</tr>
+<tr>
+<td align="center">upload [ʌp’ləʊd]</td>
+<td align="center">vt. 上传</td>
+</tr>
+<tr>
+<td align="center">download [daʊn’ləʊd]</td>
+<td align="center">vt. 下载</td>
+</tr>
+</tbody></table>
+<h3 id="The-fifth-stage"><a href="#The-fifth-stage" class="headerlink" title="The fifth stage"></a>The fifth stage</h3><table>
+<thead>
+<tr>
+<th align="center">array[ə’reɪ]</th>
+<th align="center">n. 数组，阵列；排列，列阵；</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">element[‘elɪm(ə)nt]</td>
+<td align="center">n. 元素；要素；原理；成分；</td>
+</tr>
+<tr>
+<td align="center">index[‘ɪndeks]</td>
+<td align="center">n. 指标；指数；索引；指针</td>
+</tr>
+<tr>
+<td align="center">length[leŋθ]</td>
+<td align="center">n. 长度，长；</td>
+</tr>
+<tr>
+<td align="center">copy[‘kɒpɪ]</td>
+<td align="center">vi. 复制；复印；</td>
+</tr>
+<tr>
+<td align="center">sort[sɔːt]</td>
+<td align="center">vt. 将…分类；将…排序；挑选出某物</td>
+</tr>
+<tr>
+<td align="center">avg[ævərɪdʒ]</td>
+<td align="center">abbr. 平均值（average）</td>
+</tr>
+<tr>
+<td align="center">new[njuː]</td>
+<td align="center">adj. 新的 [计]创建新的</td>
+</tr>
+<tr>
+<td align="center">max[mæks]</td>
+<td align="center">n.最大量；最大数</td>
+</tr>
+<tr>
+<td align="center">min [mɪn]</td>
+<td align="center">代表 minimum[‘mɪnɪməm]adj. 最小的；最低的</td>
+</tr>
+<tr>
+<td align="center">temp[temp]</td>
+<td align="center">临时的</td>
+</tr>
+</tbody></table>
+<h3 id="Advanced-five"><a href="#Advanced-five" class="headerlink" title="Advanced five"></a>Advanced five</h3><table>
+<thead>
+<tr>
+<th align="center">ArrayIndexOutOfBoundsException</th>
+<th align="center">数组下标越界异常</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">NullPointerException</td>
+<td align="center">空指针异常</td>
+</tr>
+<tr>
+<td align="center">reverse[rɪ’vɜːs]</td>
+<td align="center">vt. 颠倒；倒转</td>
+</tr>
+<tr>
+<td align="center">range [reɪn(d)ʒ]</td>
+<td align="center">n. 范围；幅度；</td>
+</tr>
+<tr>
+<td align="center">bubble sort</td>
+<td align="center">冒泡排序</td>
+</tr>
+<tr>
+<td align="center">binary search</td>
+<td align="center">[计] 对分查找；二进位检索；折半查找法；二分搜寻</td>
+</tr>
+<tr>
+<td align="center">parameter[pə’ræmɪtə]</td>
+<td align="center">n. 参数；系数；参量</td>
+</tr>
+<tr>
+<td align="center">[计] actual parameter</td>
+<td align="center">实参</td>
+</tr>
+<tr>
+<td align="center">[计] formal parameter</td>
+<td align="center">形参</td>
+</tr>
+<tr>
+<td align="center">[计] command line parameter</td>
+<td align="center">命令行参数</td>
+</tr>
+<tr>
+<td align="center">[计]variable parameter</td>
+<td align="center">可变参数</td>
+</tr>
+<tr>
+<td align="center">initialize [ɪ’nɪʃ(ə)laɪz]</td>
+<td align="center">vt. 初始化，设定初值</td>
+</tr>
+</tbody></table>
+<h3 id="The-sixth-stage"><a href="#The-sixth-stage" class="headerlink" title="The sixth stage"></a>The sixth stage</h3><table>
+<thead>
+<tr>
+<th align="center">value[‘væljuː]</th>
+<th align="center">n. 值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">detail[‘diːteɪl]</td>
+<td align="center">n. 细节，详情 vt. 详述；选派</td>
+</tr>
+<tr>
+<td align="center">balance[‘bæl(ə)ns]</td>
+<td align="center">n. 平衡；余额；</td>
+</tr>
+<tr>
+<td align="center">account[ə’kaʊnt]</td>
+<td align="center">n. 账户；解释；账目，账单；理由；描述</td>
+</tr>
+<tr>
+<td align="center">family[‘fæməli]</td>
+<td align="center">adj. 家庭的，家族的</td>
+</tr>
+<tr>
+<td align="center">flag[flæg]</td>
+<td align="center">n. 标志；旗子；标记</td>
+</tr>
+<tr>
+<td align="center">menu[‘menju:, mə’nju:]</td>
+<td align="center">n. 菜单</td>
+</tr>
+<tr>
+<td align="center">select[si’lekt]</td>
+<td align="center">vt. 挑选；选拔</td>
+</tr>
+<tr>
+<td align="center">amount[ə’maunt]</td>
+<td align="center">n. 数量；总额，总数</td>
+</tr>
+<tr>
+<td align="center">confirm[kən’fə:m]</td>
+<td align="center">vt. 确认；确定；证实；批准；使巩固</td>
+</tr>
+<tr>
+<td align="center">foreach</td>
+<td align="center">n. 为每一个，循环的循环计数器，循环，迭代器</td>
+</tr>
+</tbody></table>
+<h3 id="Advanced-six"><a href="#Advanced-six" class="headerlink" title="Advanced six"></a>Advanced six</h3><table>
+<thead>
+<tr>
+<th align="center">description[dɪ’skrɪpʃ(ə)n]</th>
+<th align="center">n. 描述，描写；类型；说明书</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">monday [ˈmʌndeɪ; ˈmʌndi]</td>
+<td align="center">n. 星期一</td>
+</tr>
+<tr>
+<td align="center">tuesday[‘tjuːzdeɪ; -dɪ]</td>
+<td align="center">n. 星期二</td>
+</tr>
+<tr>
+<td align="center">wednesday[ˈwenzdɪ]</td>
+<td align="center">n. 星期三</td>
+</tr>
+<tr>
+<td align="center">thursday[‘θɜːzdeɪ; -dɪ]</td>
+<td align="center">n. 星期四</td>
+</tr>
+<tr>
+<td align="center">friday[ˈfraɪ.deɪ]</td>
+<td align="center">n. 星期五</td>
+</tr>
+<tr>
+<td align="center">saturday [ˈsætədɪ; -deɪ]</td>
+<td align="center">n. 星期六</td>
+</tr>
+<tr>
+<td align="center">sunday [ˈsʌndeɪ; ˈsʌndi]</td>
+<td align="center">n. 星期日</td>
+</tr>
+<tr>
+<td align="center">API [,e pi ‘aɪ]</td>
+<td align="center">abbr. 应用程序接口（Application Program Interface）</td>
+</tr>
+</tbody></table>
+<h3 id="The-seventh-stage"><a href="#The-seventh-stage" class="headerlink" title="The seventh stage"></a>The seventh stage</h3><table>
+<thead>
+<tr>
+<th align="center">object[‘ɒbdʒɪkt; -dʒekt]</th>
+<th align="center">n. 目标；物体；客体；宾语；对象</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">new[njuː]</td>
+<td align="center">adj. 新的 [计]创建新的</td>
+</tr>
+<tr>
+<td align="center">field[fiːld]</td>
+<td align="center">[计]字段、栏位、域、栏、属性</td>
+</tr>
+<tr>
+<td align="center">stack[stæk]</td>
+<td align="center">[计]堆栈</td>
+</tr>
+<tr>
+<td align="center">heap[hiːp]</td>
+<td align="center">n. 堆；</td>
+</tr>
+<tr>
+<td align="center">student[‘stjuːd(ə)nt]</td>
+<td align="center">n. 学生；学者</td>
+</tr>
+<tr>
+<td align="center">teacher[‘tiːtʃə]</td>
+<td align="center">n. 教师；导师</td>
+</tr>
+<tr>
+<td align="center">name [neɪm]</td>
+<td align="center">n. 名称，名字；姓名；</td>
+</tr>
+<tr>
+<td align="center">age[eɪdʒ]</td>
+<td align="center">n. 年龄；时代；</td>
+</tr>
+<tr>
+<td align="center">telephone[‘telɪfəʊn]</td>
+<td align="center">n. （美）电话；电话机；</td>
+</tr>
+<tr>
+<td align="center">phone[fəʊn]</td>
+<td align="center">n. 电话；耳机，听筒</td>
+</tr>
+<tr>
+<td align="center">address[ə’dres]</td>
+<td align="center">n. 地址；</td>
+</tr>
+<tr>
+<td align="center">gender[‘dʒendə]</td>
+<td align="center">n. 性；性别；</td>
+</tr>
+<tr>
+<td align="center">title[‘taɪt(ə)l]</td>
+<td align="center">标题</td>
+</tr>
+<tr>
+<td align="center">price[praɪs]</td>
+<td align="center">n. 价格；价值；代价</td>
+</tr>
+<tr>
+<td align="center">null[nʌl]</td>
+<td align="center">adj. 无效的，无价值的；等于零的 n. 零，[数] 空</td>
+</tr>
+</tbody></table>
+<h3 id="Advanced-seven"><a href="#Advanced-seven" class="headerlink" title="Advanced  seven"></a>Advanced  seven</h3><table>
+<thead>
+<tr>
+<th align="center">OOP</th>
+<th align="center">abbr. 面向对象的程序设计（Object Oriented Programming）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">oriented</td>
+<td align="center">adj. 导向的；定向的；以…为方向的；v. 调整；使朝向（orient 的过去分词）；确定…的方位</td>
+</tr>
+<tr>
+<td align="center">programming[‘prəʊɡræmɪŋ]</td>
+<td align="center">n. 设计，规划；编制程序，[计] 程序编制</td>
+</tr>
+<tr>
+<td align="center">member[‘membə]</td>
+<td align="center">n. 成员；</td>
+</tr>
+<tr>
+<td align="center">GC</td>
+<td align="center">垃圾收集 Garbage Collection（GC）</td>
+</tr>
+<tr>
+<td align="center">circle[‘sɜːk(ə)l]</td>
+<td align="center">n. 循环，周期；圆；</td>
+</tr>
+<tr>
+<td align="center">radius[‘reɪdɪəs]</td>
+<td align="center">n. 半径，</td>
+</tr>
+<tr>
+<td align="center">rectangle[‘rektæŋg(ə)l]</td>
+<td align="center">n. 矩形；长方形</td>
+</tr>
+<tr>
+<td align="center">triangle[‘traɪæŋg(ə)l]</td>
+<td align="center">n. 三角（形）；</td>
+</tr>
+</tbody></table>
+<h3 id="The-eighth-stage"><a href="#The-eighth-stage" class="headerlink" title="The eighth stage"></a>The eighth stage</h3><table>
+<thead>
+<tr>
+<th align="center">function[‘fʌŋ(k)ʃ(ə)n]</th>
+<th align="center">n. 功能；[数] 函数；</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">method[‘meθəd]</td>
+<td align="center">n. 方法；条理；类函数</td>
+</tr>
+<tr>
+<td align="center">return[rɪ’tɜːn]</td>
+<td align="center">n. 返回；归还；</td>
+</tr>
+<tr>
+<td align="center">return value</td>
+<td align="center">[计] 返回值；传回值</td>
+</tr>
+<tr>
+<td align="center">return type</td>
+<td align="center">返回类型</td>
+</tr>
+<tr>
+<td align="center">overload[əʊvə’ləʊd]</td>
+<td align="center">vt. 超载，重载</td>
+</tr>
+<tr>
+<td align="center">parameter[pə’ræmɪtə]</td>
+<td align="center">n. 参数；系数；参量</td>
+</tr>
+<tr>
+<td align="center">[计] actual parameter</td>
+<td align="center">实参</td>
+</tr>
+<tr>
+<td align="center">[计] formal parameter</td>
+<td align="center">形参</td>
+</tr>
+<tr>
+<td align="center">[计] command line parameter</td>
+<td align="center">命令行参数</td>
+</tr>
+<tr>
+<td align="center">[计]variable parameter</td>
+<td align="center">可变参数</td>
+</tr>
+<tr>
+<td align="center">modifier [‘mɒdɪfaɪə]</td>
+<td align="center">[语] 修饰语 [计]修饰符</td>
+</tr>
+<tr>
+<td align="center">[计]local variable</td>
+<td align="center">局部变量</td>
+</tr>
+<tr>
+<td align="center">[计]member variable</td>
+<td align="center">成员变量</td>
+</tr>
+<tr>
+<td align="center">reference[‘ref(ə)r(ə)ns]</td>
+<td align="center">vt. 引用，参考</td>
+</tr>
+<tr>
+<td align="center">statement[‘steɪtm(ə)nt]</td>
+<td align="center">[计]语句</td>
+</tr>
+<tr>
+<td align="center">arguments [‘ɑːgjʊm(ə)nts]</td>
+<td align="center">n. 参数</td>
+</tr>
+</tbody></table>
+<h3 id="Advanced-eight"><a href="#Advanced-eight" class="headerlink" title="Advanced eight"></a>Advanced eight</h3><p>1、declare[‘dekleə] </p>
+<ul>
+<li>[计]declare variables 声明变量</li>
+<li>[计]method declaration 方法声明</li>
+<li>[计]method invocation 方法调用 </li>
+<li>[计]calling method 调用方法</li>
+</ul>
+<p>2、definition[defɪ’nɪʃ(ə)n]</p>
+<p>定义</p>
+<ul>
+<li>[数] defined variable</li>
+<li>User-Defined Method 用户定义方法</li>
+<li>System-Generated Method 系统方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">undefined [ʌndɪ’faɪnd]</th>
+<th align="center">adj. 不明确的；未下定义的</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">husband[‘hʌzbənd]</td>
+<td align="center">n. 丈夫</td>
+</tr>
+<tr>
+<td align="center">wife[waɪf]</td>
+<td align="center">n. 妻子，已婚妇女；夫人</td>
+</tr>
+<tr>
+<td align="center">account[ə’kaʊnt]</td>
+<td align="center">n. 账户；解释；账目，账单；理由；描述</td>
+</tr>
+<tr>
+<td align="center">customer [‘kʌstəmə]</td>
+<td align="center">n. 顾客；家伙；消费者</td>
+</tr>
+<tr>
+<td align="center">bank[bæŋk]</td>
+<td align="center">n. 银行；</td>
+</tr>
+<tr>
+<td align="center">save[seɪv]</td>
+<td align="center">vt. 节省；保存；储蓄；解救</td>
+</tr>
+<tr>
+<td align="center">withdraw[wɪð’drɔː]</td>
+<td align="center">vt. 撤退；收回；撤消；提款</td>
+</tr>
+<tr>
+<td align="center">balance[‘bæl(ə)ns]</td>
+<td align="center">n. 平衡；余额；</td>
+</tr>
+<tr>
+<td align="center">identity[aɪ’dentɪtɪ]</td>
+<td align="center">n. 身份；同一性，一致；特性；恒等式</td>
+</tr>
+<tr>
+<td align="center">identity card</td>
+<td align="center">身份证或 ID Card;</td>
+</tr>
+<tr>
+<td align="center">identifier</td>
+<td align="center">标识符</td>
+</tr>
+</tbody></table>
+<h3 id="The-ninth-stage"><a href="#The-ninth-stage" class="headerlink" title="The ninth stage"></a>The ninth stage</h3><table>
+<thead>
+<tr>
+<th align="center">public[‘pʌblɪk]</th>
+<th align="center">adj. 公众的；政府的；公用的；公立的</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">protected [prə’tektɪd]</td>
+<td align="center">adj. 受保护的</td>
+</tr>
+<tr>
+<td align="center">default[dɪ’fɔːlt; ‘diːfɔːlt]</td>
+<td align="center">vi. 拖欠；不履行；不到场；n. 违约；缺席；缺乏；系统默认值</td>
+</tr>
+<tr>
+<td align="center">private[ˈpraɪvɪt]</td>
+<td align="center">adj. 私人的，私有的；私立的；私营的</td>
+</tr>
+<tr>
+<td align="center">constructor[kənˈstrʌktə(r)]</td>
+<td align="center">n. 构造函数；构造器；建造者</td>
+</tr>
+<tr>
+<td align="center">this[ðɪs]</td>
+<td align="center">pron. 这；这个；这里；[Java]当前对象</td>
+</tr>
+<tr>
+<td align="center">package [‘pækɪdʒ]</td>
+<td align="center">n. 包，包裹；</td>
+</tr>
+<tr>
+<td align="center">import[ɪm’pɔːt; ‘ɪm-]</td>
+<td align="center">[计]导入</td>
+</tr>
+<tr>
+<td align="center">get[get]</td>
+<td align="center">vt. 获得；</td>
+</tr>
+<tr>
+<td align="center">set [set]</td>
+<td align="center">set value[自] 设定值，给定值；</td>
+</tr>
+</tbody></table>
+<h3 id="Advanced-nine"><a href="#Advanced-nine" class="headerlink" title="Advanced nine"></a>Advanced nine</h3><table>
+<thead>
+<tr>
+<th align="center">encapsulation[ɪn,kæpsə’leɪʃən]</th>
+<th align="center">n. 封装；包装</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">person[‘pɜːs(ə)n]</td>
+<td align="center">n. 人；身体；容貌，外表；人称</td>
+</tr>
+<tr>
+<td align="center">people[‘piːp(ə)l]</td>
+<td align="center">n. 人；人类；民族；公民</td>
+</tr>
+<tr>
+<td align="center">human[‘hjuːmən]</td>
+<td align="center">n. 人；人类</td>
+</tr>
+<tr>
+<td align="center">info[‘ɪnfəʊ]</td>
+<td align="center">n. 信息；情报</td>
+</tr>
+<tr>
+<td align="center">detail[‘diːteɪl]</td>
+<td align="center">n. 细节，详情 vt. 详述；选派</td>
+</tr>
+<tr>
+<td align="center">major [‘meɪdʒə]</td>
+<td align="center">adj. 主要的；重要的；主修的；n.专业</td>
+</tr>
+<tr>
+<td align="center">school[skuːl]</td>
+<td align="center">n. 学校；学院；</td>
+</tr>
+<tr>
+<td align="center">base[beɪs]</td>
+<td align="center">n. 基础；底部；</td>
+</tr>
+<tr>
+<td align="center">margin[‘mɑːdʒɪn]</td>
+<td align="center">n. 边缘；利润，余裕；页边的空白</td>
+</tr>
+<tr>
+<td align="center">bottom[‘bɒtəm]</td>
+<td align="center">n. 底部；末端；</td>
+</tr>
+<tr>
+<td align="center">top[tɒp]</td>
+<td align="center">n. 顶部，顶端；上部；</td>
+</tr>
+<tr>
+<td align="center">pass by reference</td>
+<td align="center">按引用传递</td>
+</tr>
+<tr>
+<td align="center">pass by value</td>
+<td align="center">按值传递</td>
+</tr>
+</tbody></table>
+<h3 id="Stage-10"><a href="#Stage-10" class="headerlink" title="Stage 10"></a>Stage 10</h3><table>
+<thead>
+<tr>
+<th align="center">extends[ɪk’stendz; ek-]</th>
+<th align="center">v. 延伸；扩充；继承（extend 的第三人称单数形式）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">subclass [‘sʌbklɑːs]</td>
+<td align="center">子类</td>
+</tr>
+<tr>
+<td align="center">superclass[‘suːpəklɑːs; ‘sjuː-]</td>
+<td align="center">n. 超类</td>
+</tr>
+<tr>
+<td align="center">override[əʊvə’raɪd]</td>
+<td align="center">vt. 推翻；不顾；践踏</td>
+</tr>
+<tr>
+<td align="center">overload [əʊvə’ləʊd]</td>
+<td align="center">vt. 超载，超过负荷</td>
+</tr>
+<tr>
+<td align="center">super[‘suːpə; ‘sjuː-]</td>
+<td align="center">adj. 特级的；极好的；[Java]父类</td>
+</tr>
+<tr>
+<td align="center">add[æd]</td>
+<td align="center">vt. 增加，添加；</td>
+</tr>
+<tr>
+<td align="center">update[ʌp’deɪt]</td>
+<td align="center">vt. 更新；校正，修正；</td>
+</tr>
+<tr>
+<td align="center">delete[dɪ’liːt]</td>
+<td align="center">vt. 删除</td>
+</tr>
+<tr>
+<td align="center">replace [rɪ’pleɪs]</td>
+<td align="center">vt. 取代，代替；替换，更换；</td>
+</tr>
+<tr>
+<td align="center">all[ɔːl]</td>
+<td align="center">adj. 全部的</td>
+</tr>
+<tr>
+<td align="center">total [‘təʊt(ə)l]</td>
+<td align="center">n. 总数，合计</td>
+</tr>
+<tr>
+<td align="center">view[vjuː]</td>
+<td align="center">vt. 观察；考虑；查看</td>
+</tr>
+<tr>
+<td align="center">list[lɪst]</td>
+<td align="center">n. [计] 列表；清单；目录</td>
+</tr>
+<tr>
+<td align="center">select [sɪ’lekt]</td>
+<td align="center">adj. 精选的；挑选出来的；极好的</td>
+</tr>
+<tr>
+<td align="center">read [ri:d;red]</td>
+<td align="center">读取</td>
+</tr>
+</tbody></table>
+<h3 id="Advanced-ten"><a href="#Advanced-ten" class="headerlink" title="Advanced ten"></a>Advanced ten</h3><table>
+<thead>
+<tr>
+<th align="center">inherit[ɪn’herɪt]</th>
+<th align="center">vt. 继承；遗传而得</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">menu[‘menjuː]</td>
+<td align="center">n. 菜单</td>
+</tr>
+<tr>
+<td align="center">modify [‘mɒdɪfaɪ]</td>
+<td align="center">vt. 修改，修饰；更改</td>
+</tr>
+<tr>
+<td align="center">enter[‘entə]</td>
+<td align="center">n. [计] 输入；回车</td>
+</tr>
+<tr>
+<td align="center">confirm[kən’fɜːm]</td>
+<td align="center">vt. 确认；确定；证实；批准；使巩固</td>
+</tr>
+<tr>
+<td align="center">employee[ɪmˈplɔɪi;ˌemplɔɪˈi:]</td>
+<td align="center">n. 雇员；从业员工</td>
+</tr>
+<tr>
+<td align="center">manager[‘mænɪdʒə]</td>
+<td align="center">n. 经理；管理人员</td>
+</tr>
+<tr>
+<td align="center">salary[‘sælərɪ]</td>
+<td align="center">n. 薪水</td>
+</tr>
+<tr>
+<td align="center">pay[peɪ]</td>
+<td align="center">n. 工资，薪水；付款；报答</td>
+</tr>
+<tr>
+<td align="center">hire[‘haɪə]</td>
+<td align="center">vi. 雇用，租用；受雇</td>
+</tr>
+<tr>
+<td align="center">bonus[‘bəʊnəs]</td>
+<td align="center">n. 奖金；红利；额外津贴</td>
+</tr>
+<tr>
+<td align="center">stock[stɒk]</td>
+<td align="center">n. 股份，股票；</td>
+</tr>
+<tr>
+<td align="center">plan [plæn]</td>
+<td align="center">vi. 计划；打算</td>
+</tr>
+<tr>
+<td align="center">report[rɪ’pɔːt]</td>
+<td align="center">n. 报告；报道；成绩单</td>
+</tr>
+</tbody></table>
+<h3 id="Stage-11"><a href="#Stage-11" class="headerlink" title="Stage 11"></a>Stage 11</h3><table>
+<thead>
+<tr>
+<th align="center">instance[‘ɪnst(ə)ns]</th>
+<th align="center">n. 实例；情况；建议</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">instanceof</td>
+<td align="center">n. 实例；运算符</td>
+</tr>
+<tr>
+<td align="center">casting [‘kɑːstɪŋ]</td>
+<td align="center">转型</td>
+</tr>
+<tr>
+<td align="center">upcasting</td>
+<td align="center">n. 向上转型</td>
+</tr>
+<tr>
+<td align="center">downcasting</td>
+<td align="center">n. 向下转型</td>
+</tr>
+<tr>
+<td align="center">Safe Downcasting</td>
+<td align="center">安全的向下转型 ; 安全向下转型 ;</td>
+</tr>
+<tr>
+<td align="center">ClassCastException</td>
+<td align="center">类型转换异常</td>
+</tr>
+</tbody></table>
+<h3 id="Advanced-11"><a href="#Advanced-11" class="headerlink" title="Advanced 11"></a>Advanced 11</h3><table>
+<thead>
+<tr>
+<th align="center">polymorphism[,pɒlɪ’mɔːfɪz(ə)m]</th>
+<th align="center">n. 多态性；多形性；同质多晶</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">dependency[dɪ’pend(ə)nsɪ]</td>
+<td align="center">[计]依赖</td>
+</tr>
+<tr>
+<td align="center">association[[ə,soʃɪ’eʃən]]</td>
+<td align="center">[计]关联</td>
+</tr>
+<tr>
+<td align="center">aggregation [,æɡrɪ’ɡeɪʃən]</td>
+<td align="center">[计]聚合</td>
+</tr>
+<tr>
+<td align="center">composite[‘kɒmpəzɪt]</td>
+<td align="center">[计]复合，组合</td>
+</tr>
+<tr>
+<td align="center">generalization[,dʒenrələ’zeɪʃən]</td>
+<td align="center">n. 概括；普遍化；一般化；继承（Generalization，又称为泛化，is-a 的关系）</td>
+</tr>
+</tbody></table>
+<h3 id="Stage12"><a href="#Stage12" class="headerlink" title="Stage12"></a>Stage12</h3><table>
+<thead>
+<tr>
+<th align="center">equals[‘i:kwəlz]</th>
+<th align="center">v. 平等（equal 的第三人称单数形式）；与…相同</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">hash code hashCode()</td>
+<td align="center">hashCode(散列码)是由对象导出的一个整型值，散列码是没有规律的，如果对象不一样，其散列码基本也不会一致。</td>
+</tr>
+<tr>
+<td align="center">finalize[‘faɪn(ə)laɪz]</td>
+<td align="center">vt. 完成；使结束</td>
+</tr>
+<tr>
+<td align="center">static[‘stætɪk]</td>
+<td align="center">adj. 静态的；静电的；静力的</td>
+</tr>
+<tr>
+<td align="center">final[‘faɪn(ə)l]</td>
+<td align="center">adj. 最终的；决定性的；不可更改的</td>
+</tr>
+<tr>
+<td align="center">native[‘neɪtɪv]</td>
+<td align="center">adj. 本国的；土著的；天然的；与生俱来的；天赋的；原生的</td>
+</tr>
+</tbody></table>
+<h3 id="Advanced-12"><a href="#Advanced-12" class="headerlink" title="Advanced 12"></a>Advanced 12</h3><table>
+<thead>
+<tr>
+<th align="center">block [blɒk]</th>
+<th align="center">adj. 成批的，大块的；交通堵塞的</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">order[‘ɔːdə]</td>
+<td align="center">n. 命令；顺序；规则；[贸易] 定单</td>
+</tr>
+<tr>
+<td align="center">dog[dɒg]</td>
+<td align="center">n. 狗；</td>
+</tr>
+<tr>
+<td align="center">cat[kæt]</td>
+<td align="center">n. 猫</td>
+</tr>
+<tr>
+<td align="center">animal[‘ænɪm(ə)l]</td>
+<td align="center">n. 动物</td>
+</tr>
+<tr>
+<td align="center">car[kɑː]</td>
+<td align="center">n. 汽车；车厢</td>
+</tr>
+<tr>
+<td align="center">vehicle[ˈvɪəkl]</td>
+<td align="center">n. [车辆] 车辆；工具；交通工具；运载工具；传播媒介；媒介物</td>
+</tr>
+<tr>
+<td align="center">truck[trʌk]</td>
+<td align="center">n. 卡车；</td>
+</tr>
+<tr>
+<td align="center">train[treɪn]</td>
+<td align="center">n. 火车；</td>
+</tr>
+<tr>
+<td align="center">plane [pleɪn]</td>
+<td align="center">n. 飞机；</td>
+</tr>
+<tr>
+<td align="center">fly[flaɪ]</td>
+<td align="center">vt. 飞行；飞越；</td>
+</tr>
+<tr>
+<td align="center">ship[ʃɪp]</td>
+<td align="center">n. 船；舰；太空船</td>
+</tr>
+<tr>
+<td align="center">boat[bəʊt]</td>
+<td align="center">n. 小船；轮船</td>
+</tr>
+<tr>
+<td align="center">clone [kləʊn]</td>
+<td align="center">n. 克隆</td>
+</tr>
+<tr>
+<td align="center">init [ɪ’nɪt]</td>
+<td align="center">abbr. 初始化（initialization）</td>
+</tr>
+</tbody></table>
+<h3 id="Stage-13"><a href="#Stage-13" class="headerlink" title="Stage 13"></a>Stage 13</h3><table>
+<thead>
+<tr>
+<th align="center">abstract[‘æbstrækt]</th>
+<th align="center">n. 摘要；抽象；抽象的概念</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">interface [‘ɪntəfeɪs]</td>
+<td align="center">n. 界面；&lt;计&gt;接口；交界面</td>
+</tr>
+<tr>
+<td align="center">implements[‘ɪmplɪm(ə)nts]</td>
+<td align="center">vt. 实施，执行；实现（第三人称单数）</td>
+</tr>
+<tr>
+<td align="center">single [‘sɪŋg(ə)l]</td>
+<td align="center">adj. 单一的；单身的；单程的;n. 一个；</td>
+</tr>
+<tr>
+<td align="center">singleton [‘sɪŋg(ə)lt(ə)n]</td>
+<td align="center">单例</td>
+</tr>
+<tr>
+<td align="center">comparable [‘kɒmp(ə)rəb(ə)l] Comparable</td>
+<td align="center">adj. 可比较的；比得上的</td>
+</tr>
+</tbody></table>
+<h3 id="Advance-13"><a href="#Advance-13" class="headerlink" title="Advance 13"></a>Advance 13</h3><table>
+<thead>
+<tr>
+<th align="center">subject[ˈsʌbdʒɪkt;]</th>
+<th align="center">n. 主题；科目</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">simple[‘sɪmp(ə)l]</td>
+<td align="center">adj. 简单的；</td>
+</tr>
+<tr>
+<td align="center">pattern[‘pæt(ə)n]</td>
+<td align="center">n. 模式；</td>
+</tr>
+<tr>
+<td align="center">proxy[‘prɒksɪ]</td>
+<td align="center">n. 代理人；</td>
+</tr>
+<tr>
+<td align="center">factory[‘fækt(ə)rɪ]</td>
+<td align="center">n. 工厂；制造厂；</td>
+</tr>
+<tr>
+<td align="center">template [‘templeɪt; -plɪt]</td>
+<td align="center">n. 模板，样板</td>
+</tr>
+</tbody></table>
+<h3 id="Stage-14"><a href="#Stage-14" class="headerlink" title="Stage 14"></a>Stage 14</h3><table>
+<thead>
+<tr>
+<th align="center">inner[ɪnə]</th>
+<th align="center">adj. 内部的；</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">outer[‘aʊtə]</td>
+<td align="center">adj. 外面的，外部的；</td>
+</tr>
+<tr>
+<td align="center">enum[‘enəm]</td>
+<td align="center">n. 枚举</td>
+</tr>
+<tr>
+<td align="center">annotation[ænə’teɪʃ(ə)n]</td>
+<td align="center">n. 注释；注解；</td>
+</tr>
+<tr>
+<td align="center">override[əʊvə’raɪd] @Override</td>
+<td align="center">覆盖、覆写</td>
+</tr>
+<tr>
+<td align="center">deprecated[ˈdeprəkeɪtɪd] @Deprecated</td>
+<td align="center">v. 不赞成；弃用；不宜用（deprecate 的过去式及过去分词形式）</td>
+</tr>
+<tr>
+<td align="center">suppress[sə’pres]</td>
+<td align="center">vt. 抑制；镇压；废止</td>
+</tr>
+<tr>
+<td align="center">warning[‘wɔːnɪŋ]</td>
+<td align="center">n. 警告；预兆；预告</td>
+</tr>
+<tr>
+<td align="center">suppresswarings @SuppressWarnings</td>
+<td align="center">抑制警告</td>
+</tr>
+<tr>
+<td align="center">source[sɔːs]</td>
+<td align="center">source code 源代码</td>
+</tr>
+<tr>
+<td align="center">runtime [‘rʌntæɪm]</td>
+<td align="center">n. 执行时间，运行时间</td>
+</tr>
+<tr>
+<td align="center">class [klɑːs]</td>
+<td align="center">字节码</td>
+</tr>
+</tbody></table>
+<h3 id="Advance-14"><a href="#Advance-14" class="headerlink" title="Advance 14"></a>Advance 14</h3><table>
+<thead>
+<tr>
+<th align="center">nest[nest]</th>
+<th align="center">vt. 筑巢；嵌套</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">local [‘ləʊk(ə)l]</td>
+<td align="center">n. [计] 局部；adj. 当地的；局部的；</td>
+</tr>
+<tr>
+<td align="center">anonymous[ə’nɒnɪməs]</td>
+<td align="center">adj. 匿名的，无名的</td>
+</tr>
+<tr>
+<td align="center">ordinal[‘ɔːdɪn(ə)l]</td>
+<td align="center">adj. 顺序的，依次的;n. [数] 序数</td>
+</tr>
+<tr>
+<td align="center">author[‘ɔːθə]</td>
+<td align="center">n. 作者；作家；创始人</td>
+</tr>
+<tr>
+<td align="center">version[‘vɜːʃ(ə)n]</td>
+<td align="center">n. 版本；译文；</td>
+</tr>
+<tr>
+<td align="center">see[siː]</td>
+<td align="center">vi. 看；看见；参见</td>
+</tr>
+<tr>
+<td align="center">since [sɪns]</td>
+<td align="center">prep. 自…以来；自…以后</td>
+</tr>
+<tr>
+<td align="center">param[ˌpærəˈm]</td>
+<td align="center">abbr. 参数（Parametric）</td>
+</tr>
+<tr>
+<td align="center">exception [ɪk’sepʃ(ə)n; ek-]</td>
+<td align="center">n. 例外；异议</td>
+</tr>
+<tr>
+<td align="center">target[‘tɑːgɪt] @Target</td>
+<td align="center">n. 目标，指标；</td>
+</tr>
+<tr>
+<td align="center">retention[rɪ’tenʃ(ə)n] @Retention</td>
+<td align="center">n. 保留；扣留，滞留；</td>
+</tr>
+<tr>
+<td align="center">documented[‘dɒkjʊm(ə)ntɪd] @Documented</td>
+<td align="center">登记在案</td>
+</tr>
+<tr>
+<td align="center">inherited[ɪn’herɪtɪd] @Inherited</td>
+<td align="center">adj. 遗传的；继承权的；通过继承得到的</td>
+</tr>
+<tr>
+<td align="center">element [‘elɪm(ə)nt]</td>
+<td align="center">n. 元素；</td>
+</tr>
+<tr>
+<td align="center">type [taɪp]</td>
+<td align="center">n. 类型，品种；ElementType 元素类型</td>
+</tr>
+<tr>
+<td align="center">policy[‘pɒləsɪ]</td>
+<td align="center">n. 政策，方针；策略</td>
+</tr>
+<tr>
+<td align="center">RetentionPolicy</td>
+<td align="center">保留策略</td>
+</tr>
+<tr>
+<td align="center">local variable</td>
+<td align="center">局部变量</td>
+</tr>
+<tr>
+<td align="center">metadata [‘metədeɪtə]</td>
+<td align="center">n. [计] 元数据</td>
+</tr>
+</tbody></table>
+<h3 id="Stage-15"><a href="#Stage-15" class="headerlink" title="Stage 15"></a>Stage 15</h3><table>
+<thead>
+<tr>
+<th align="center">exception[ɪk’sɛpʃən]</th>
+<th align="center">n. 例外；异议；异常</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">error[‘erə]</td>
+<td align="center">n. 误差；错误；过失</td>
+</tr>
+<tr>
+<td align="center">throwable</td>
+<td align="center">可抛出</td>
+</tr>
+<tr>
+<td align="center">try[traɪ]</td>
+<td align="center">vi. 尝试；</td>
+</tr>
+<tr>
+<td align="center">catch[kætʃ]</td>
+<td align="center">n. 捕捉；</td>
+</tr>
+<tr>
+<td align="center">finally[‘faɪnəlɪ]</td>
+<td align="center">adv. 最后；终于；决定性地</td>
+</tr>
+<tr>
+<td align="center">throw[θrəʊ]</td>
+<td align="center">vt. 投；抛；</td>
+</tr>
+<tr>
+<td align="center">throws[θrəʊz]</td>
+<td align="center">v. 投；抛（throw 的三单形式）；掷</td>
+</tr>
+</tbody></table>
+<h3 id="Advance-15"><a href="#Advance-15" class="headerlink" title="Advance 15"></a>Advance 15</h3><table>
+<thead>
+<tr>
+<th align="center">arithmetic[ə’rɪθmətɪk]</th>
+<th align="center">n. 算术，算法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ArithmeticException</td>
+<td align="center">算术异常</td>
+</tr>
+<tr>
+<td align="center">RuntimeException</td>
+<td align="center">运行时异常</td>
+</tr>
+<tr>
+<td align="center">NullPointerException</td>
+<td align="center">空指针异常</td>
+</tr>
+<tr>
+<td align="center">ClassCastException</td>
+<td align="center">类型转换异常</td>
+</tr>
+<tr>
+<td align="center">ArrayIndexOutOfBoundsException</td>
+<td align="center">数组下标越界异常</td>
+</tr>
+<tr>
+<td align="center">NumberFormatException</td>
+<td align="center">数字格式化异常</td>
+</tr>
+<tr>
+<td align="center">trace[treɪs]</td>
+<td align="center">n. 痕迹，踪迹；</td>
+</tr>
+<tr>
+<td align="center">stack trace</td>
+<td align="center">堆叠追踪；堆栈踪迹</td>
+</tr>
+<tr>
+<td align="center">message [‘mesɪdʒ]</td>
+<td align="center">vt. 通知 n.消息</td>
+</tr>
+</tbody></table>
+<h3 id="Stage-16"><a href="#Stage-16" class="headerlink" title="Stage 16"></a>Stage 16</h3><table>
+<thead>
+<tr>
+<th align="center">data[‘deɪtə]</th>
+<th align="center">n. 数据（datum 的复数）；资料</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">team[tiːm]</td>
+<td align="center">n. 队；组</td>
+</tr>
+<tr>
+<td align="center">service [‘sɜːvɪs]</td>
+<td align="center">n. 服务，服侍；</td>
+</tr>
+<tr>
+<td align="center">view[vjuː]</td>
+<td align="center">视图</td>
+</tr>
+<tr>
+<td align="center">bean[biːn]</td>
+<td align="center">豆</td>
+</tr>
+<tr>
+<td align="center">JavaBean</td>
+<td align="center">对象</td>
+</tr>
+<tr>
+<td align="center">salary[‘sælərɪ]</td>
+<td align="center">n. 薪水</td>
+</tr>
+</tbody></table>
+<h3 id="Advance-16"><a href="#Advance-16" class="headerlink" title="Advance 16"></a>Advance 16</h3><table>
+<thead>
+<tr>
+<th align="center">employee[ɪmˈplɔɪi;ˌemplɔɪˈi:]</th>
+<th align="center">n. 雇员；从业员工</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">programmer [‘prəʊgræmə]</td>
+<td align="center">n. [自][计] 程序设计员</td>
+</tr>
+<tr>
+<td align="center">designer[dɪ’zaɪnə]</td>
+<td align="center">n. 设计师；</td>
+</tr>
+<tr>
+<td align="center">architect [‘ɑːkɪtekt]</td>
+<td align="center">设计师，建筑师</td>
+</tr>
+<tr>
+<td align="center">equipment [ɪ’kwɪpm(ə)nt]</td>
+<td align="center">n. 设备，装备；器材</td>
+</tr>
+<tr>
+<td align="center">PC[,pi: ‘si:]</td>
+<td align="center">abbr. 个人电脑（Personal Computer）；</td>
+</tr>
+<tr>
+<td align="center">notebook[‘nəʊtbʊk]</td>
+<td align="center">n. 笔记本，笔记簿；</td>
+</tr>
+<tr>
+<td align="center">printer [‘prɪntə]</td>
+<td align="center">n. [计] 打印机；印刷工；</td>
+</tr>
+<tr>
+<td align="center">status[‘steɪtəs]</td>
+<td align="center">n. 地位；状态；情形；</td>
+</tr>
+<tr>
+<td align="center">free[friː]</td>
+<td align="center">adv. 自由地；免费；空闲的</td>
+</tr>
+<tr>
+<td align="center">busy[‘bɪzɪ]</td>
+<td align="center">adj. 忙碌的；热闹的；正被占用的</td>
+</tr>
+<tr>
+<td align="center">vacation[vəˈkeɪʃn]</td>
+<td align="center">vi. 休假，度假</td>
+</tr>
+<tr>
+<td align="center">bonus[‘bəʊnəs]</td>
+<td align="center">n. 奖金；红利；额外津贴</td>
+</tr>
+<tr>
+<td align="center">stock[stɒk]</td>
+<td align="center">n. 股份，股票；</td>
+</tr>
+<tr>
+<td align="center">description[dɪ’skrɪpʃ(ə)n]</td>
+<td align="center">n. 描述，描写；类型；说明书</td>
+</tr>
+<tr>
+<td align="center">display[dɪ’spleɪ]</td>
+<td align="center">显示器</td>
+</tr>
+<tr>
+<td align="center">model [‘mɒdl]</td>
+<td align="center">模型、型号</td>
+</tr>
+<tr>
+<td align="center">type [taɪp]</td>
+<td align="center">n. 类型，品种；模范；样式</td>
+</tr>
+<tr>
+<td align="center">remove[rɪ’muːv]</td>
+<td align="center">移除、删除</td>
+</tr>
+</tbody></table>
+<h3 id="Stage-17"><a href="#Stage-17" class="headerlink" title="Stage 17"></a>Stage 17</h3><table>
+<thead>
+<tr>
+<th align="center">integer[‘ɪntɪdʒə]</th>
+<th align="center">n. [数] 整数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">character[‘kærəktə]</td>
+<td align="center">[计] 字符</td>
+</tr>
+<tr>
+<td align="center">parse [pɑːz]</td>
+<td align="center">解析</td>
+</tr>
+<tr>
+<td align="center">empty[ˈemptɪ]</td>
+<td align="center">adj. 空的；无意义的；</td>
+</tr>
+<tr>
+<td align="center">trim[trɪm]</td>
+<td align="center">vi. 削减</td>
+</tr>
+<tr>
+<td align="center">last [lɑːst]</td>
+<td align="center">adj. 最后的 n. 末尾，最后；上个；</td>
+</tr>
+<tr>
+<td align="center">first[fɜːst]</td>
+<td align="center">adv. 第一；首先；优先；</td>
+</tr>
+<tr>
+<td align="center">starts</td>
+<td align="center">n. 开始（start 的复数）；</td>
+</tr>
+<tr>
+<td align="center">start with</td>
+<td align="center">从…开始</td>
+</tr>
+<tr>
+<td align="center">ends</td>
+<td align="center">n. 结束（end 的复数）；目的；末端</td>
+</tr>
+<tr>
+<td align="center">end with</td>
+<td align="center">以……结束</td>
+</tr>
+<tr>
+<td align="center">replace[rɪ’pleɪs]</td>
+<td align="center">vt. 取代，代替；替换，更换；</td>
+</tr>
+<tr>
+<td align="center">replace all</td>
+<td align="center">全部替换</td>
+</tr>
+<tr>
+<td align="center">replace first</td>
+<td align="center">替换第一个</td>
+</tr>
+<tr>
+<td align="center">replace with</td>
+<td align="center">用…替换</td>
+</tr>
+<tr>
+<td align="center">substring[‘sʌb,striŋ]</td>
+<td align="center">n. [计] 子串；子字符串</td>
+</tr>
+<tr>
+<td align="center">split [splɪt]</td>
+<td align="center">vt. 分离；使分离；</td>
+</tr>
+<tr>
+<td align="center">contains[kən’teinz]</td>
+<td align="center">v. 包含；容纳；包含某字符串（contain 的单三形式）</td>
+</tr>
+<tr>
+<td align="center">uppercase[‘ʌpə’keɪs]</td>
+<td align="center">n. 大写字母</td>
+</tr>
+<tr>
+<td align="center">lowercase[,ləʊə’keɪs]</td>
+<td align="center">n. 小写字母；</td>
+</tr>
+<tr>
+<td align="center">concat</td>
+<td align="center">n. 合并多个数组；合并多个字符串</td>
+</tr>
+<tr>
+<td align="center">buffer[‘bʌfə]</td>
+<td align="center">n. [计] 缓冲区；</td>
+</tr>
+<tr>
+<td align="center">sqrt</td>
+<td align="center">abbr. 开平方根（square root）</td>
+</tr>
+<tr>
+<td align="center">pow</td>
+<td align="center">乘幂</td>
+</tr>
+<tr>
+<td align="center">ceil</td>
+<td align="center">向正无穷取整</td>
+</tr>
+<tr>
+<td align="center">floor</td>
+<td align="center">向负无穷取整</td>
+</tr>
+<tr>
+<td align="center">round</td>
+<td align="center">四舍五入</td>
+</tr>
+<tr>
+<td align="center">date[deɪt]</td>
+<td align="center">n. 日期；</td>
+</tr>
+<tr>
+<td align="center">time [taɪm]</td>
+<td align="center">n. 时间；次数；</td>
+</tr>
+<tr>
+<td align="center">calendar[‘kælɪndə]</td>
+<td align="center">n. 日历；[天] 历法；日程表</td>
+</tr>
+<tr>
+<td align="center">append[ə’pend]</td>
+<td align="center">追加，附加</td>
+</tr>
+<tr>
+<td align="center">format[‘fɔːmæt]</td>
+<td align="center">vt. 使格式化；规定…的格式</td>
+</tr>
+<tr>
+<td align="center">local[‘ləʊk(ə)l]</td>
+<td align="center">n. [计] 局部；当地的；本地的</td>
+</tr>
+<tr>
+<td align="center">now [naʊ]</td>
+<td align="center">adv. 现在；如今；立刻</td>
+</tr>
+<tr>
+<td align="center">before[bɪ’fɔː]</td>
+<td align="center">prep. 在…之前，先于</td>
+</tr>
+<tr>
+<td align="center">after [‘ɑːftə]</td>
+<td align="center">prep. 在……之后</td>
+</tr>
+<tr>
+<td align="center">comparable[‘kɒmp(ə)rəb(ə)l]</td>
+<td align="center">adj. 可比较的；</td>
+</tr>
+<tr>
+<td align="center">comparator[kəm’pærətə]</td>
+<td align="center">比较器</td>
+</tr>
+</tbody></table>
+<h3 id="Advance-17"><a href="#Advance-17" class="headerlink" title="Advance 17"></a>Advance 17</h3><table>
+<thead>
+<tr>
+<th align="center">wrapper[‘ræpə]</th>
+<th align="center">包装类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">boxing[‘bɒksɪŋ]</td>
+<td align="center">v. 将…装入盒中（box 的 ing 形式） n.装箱</td>
+</tr>
+<tr>
+<td align="center">unbox [,ʌn’bɔks]</td>
+<td align="center">vt. 从箱子中取出</td>
+</tr>
+<tr>
+<td align="center">auto[‘ɔːtəʊ]</td>
+<td align="center">n.自动</td>
+</tr>
+<tr>
+<td align="center">cache[kæʃ]</td>
+<td align="center">缓存</td>
+</tr>
+<tr>
+<td align="center">binary[‘baɪnərɪ]</td>
+<td align="center">adj. [数] 二进制的；</td>
+</tr>
+<tr>
+<td align="center">octal[‘ɒkt(ə)l]</td>
+<td align="center">adj. [数] 八进制的</td>
+</tr>
+<tr>
+<td align="center">hex [heks]</td>
+<td align="center">n. 十六进制；</td>
+</tr>
+<tr>
+<td align="center">decimal[‘desɪm(ə)l]</td>
+<td align="center">adj. 小数的；十进位的 n. 小数</td>
+</tr>
+<tr>
+<td align="center">ignore[ɪg’nɔː]</td>
+<td align="center">vt. 驳回诉讼；忽视；不理睬</td>
+</tr>
+<tr>
+<td align="center">equalsIgnoreCase</td>
+<td align="center">忽视大小写比较是否相等</td>
+</tr>
+<tr>
+<td align="center">memory[‘mem(ə)rɪ]</td>
+<td align="center">n. 记忆，记忆力；内存，[计] 存储器；回忆</td>
+</tr>
+<tr>
+<td align="center">free [friː]</td>
+<td align="center">adj. 免费的；自由的，不受约束的</td>
+</tr>
+<tr>
+<td align="center">current[‘kʌr(ə)nt]</td>
+<td align="center">adj. 现在的；流通的，通用的；最近的；</td>
+</tr>
+<tr>
+<td align="center">add[æd]</td>
+<td align="center">vi. 加；增加；加起来；做加法</td>
+</tr>
+<tr>
+<td align="center">subtract[səb’trækt]</td>
+<td align="center">vt. 减去；扣掉</td>
+</tr>
+<tr>
+<td align="center">multiply[‘mʌltɪplaɪ]</td>
+<td align="center">vt. 乘；使增加；使繁殖；使相乘</td>
+</tr>
+<tr>
+<td align="center">divide [dɪ’vaɪd]</td>
+<td align="center">vt. 划分；除；</td>
+</tr>
+<tr>
+<td align="center">remainder[rɪ’meɪndə]</td>
+<td align="center">n. [数] 余数，残余；</td>
+</tr>
+<tr>
+<td align="center">milli[‘mɪli]</td>
+<td align="center">毫，千分之一</td>
+</tr>
+<tr>
+<td align="center">zone[zəʊn]</td>
+<td align="center">地区</td>
+</tr>
+<tr>
+<td align="center">timezone</td>
+<td align="center">时区</td>
+</tr>
+<tr>
+<td align="center">locale[ləʊ’kɑːl]</td>
+<td align="center">区域、场所</td>
+</tr>
+<tr>
+<td align="center">plus[plʌs]</td>
+<td align="center">prep. 加，加上</td>
+</tr>
+<tr>
+<td align="center">minus[‘maɪnəs]</td>
+<td align="center">prep. 减，减去</td>
+</tr>
+<tr>
+<td align="center">leap [liːp]</td>
+<td align="center">vi. 跳，跳跃</td>
+</tr>
+<tr>
+<td align="center">leap year</td>
+<td align="center">闰年</td>
+</tr>
+<tr>
+<td align="center">Instant[‘ɪnst(ə)nt]</td>
+<td align="center">adj. 立即的；紧急的；紧迫的</td>
+</tr>
+<tr>
+<td align="center">duration[djʊ’reɪʃ(ə)n]</td>
+<td align="center">n. 持续，持续的时间，期间</td>
+</tr>
+<tr>
+<td align="center">period[‘pɪərɪəd]</td>
+<td align="center">n. 周期，期间；时期；</td>
+</tr>
+<tr>
+<td align="center">offset[‘ɒfset]</td>
+<td align="center">位移、偏移</td>
+</tr>
+<tr>
+<td align="center">available [ə’veɪləb(ə)l]</td>
+<td align="center">adj. 有效的，可得的；可利用的；空闲的</td>
+</tr>
+<tr>
+<td align="center">temporal [‘temp(ə)r(ə)l]</td>
+<td align="center">adj. 时间的; 世俗的; 暂存的; &lt;语&gt;表示时间的</td>
+</tr>
+<tr>
+<td align="center">adjuster[ə’dʒʌstə]</td>
+<td align="center">n. 调停者，调节器</td>
+</tr>
+</tbody></table>
+<h3 id="Stage-18"><a href="#Stage-18" class="headerlink" title="Stage 18"></a>Stage 18</h3><table>
+<thead>
+<tr>
+<th align="center">collection [kə’lekʃ(ə)n] Collection</th>
+<th align="center">收集，采集</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">arrayList ArrayList</td>
+<td align="center">n. 数组列表、动态数组</td>
+</tr>
+<tr>
+<td align="center">list[lɪst] List</td>
+<td align="center">n. [计] 列表；清单；目录</td>
+</tr>
+<tr>
+<td align="center">set[set] Set</td>
+<td align="center">n. [数] 集合；</td>
+</tr>
+<tr>
+<td align="center">clear[klɪə]</td>
+<td align="center">vt. 清除；</td>
+</tr>
+<tr>
+<td align="center">size[saɪz]</td>
+<td align="center">n. 大小；尺寸</td>
+</tr>
+<tr>
+<td align="center">contains [kən’teinz]</td>
+<td align="center">v. 包含；容纳；包含某字符串（contain 的单三形式）</td>
+</tr>
+<tr>
+<td align="center">iterator [ɪtə’reɪtə] Iterator</td>
+<td align="center">n. 迭代器；</td>
+</tr>
+<tr>
+<td align="center">iterable Iterable</td>
+<td align="center">可迭代的; 可重复的; 迭代的</td>
+</tr>
+<tr>
+<td align="center">has[hæz]</td>
+<td align="center">v. 有，得到（have 的第三人称单数）；</td>
+</tr>
+<tr>
+<td align="center">next[nekst]</td>
+<td align="center">下一个</td>
+</tr>
+<tr>
+<td align="center">previous [‘priːvɪəs]</td>
+<td align="center">前一个、上一个</td>
+</tr>
+</tbody></table>
+<h3 id="Advance-18"><a href="#Advance-18" class="headerlink" title="Advance 18"></a>Advance 18</h3><table>
+<thead>
+<tr>
+<th align="center">resize[riː’saɪz]</th>
+<th align="center">vt. 调整大小</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">retain[rɪ’teɪn]</td>
+<td align="center">vt. 保持、留存</td>
+</tr>
+<tr>
+<td align="center">vector[‘vektə]</td>
+<td align="center">向量</td>
+</tr>
+<tr>
+<td align="center">linked[lɪŋkt]</td>
+<td align="center">v. 连接；串联（link 的过去分词）</td>
+</tr>
+<tr>
+<td align="center">linked list</td>
+<td align="center">链表 LinkedList</td>
+</tr>
+<tr>
+<td align="center">enumeration [ɪ,njuːmə’reɪʃən]</td>
+<td align="center">n. 列举；[数] 计算；细目</td>
+</tr>
+<tr>
+<td align="center">concurrent [kən’kʌr(ə)nt]</td>
+<td align="center">adj. 并发的；一致的；同时发生的；并存的</td>
+</tr>
+<tr>
+<td align="center">modification[,mɒdɪfɪ’keɪʃ(ə)n]</td>
+<td align="center">n. 修改，修正；改变</td>
+</tr>
+<tr>
+<td align="center">ConcurrentModificationException</td>
+<td align="center">并发修改异常</td>
+</tr>
+<tr>
+<td align="center">HashSet</td>
+<td align="center">散列集合</td>
+</tr>
+<tr>
+<td align="center">LinkedHashSet</td>
+<td align="center">链式散列集</td>
+</tr>
+<tr>
+<td align="center">TreeSet</td>
+<td align="center">树集</td>
+</tr>
+</tbody></table>
+<h3 id="Stage-19"><a href="#Stage-19" class="headerlink" title="Stage 19"></a>Stage 19</h3><table>
+<thead>
+<tr>
+<th align="center">map[mæp]</th>
+<th align="center">vt. 映射；</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">key[kiː]</td>
+<td align="center">n. （打字机等的）键；关键；钥匙</td>
+</tr>
+<tr>
+<td align="center">value[‘væljuː]</td>
+<td align="center">n. 值；</td>
+</tr>
+<tr>
+<td align="center">put[pʊt]</td>
+<td align="center">vt. 放；安置；赋予</td>
+</tr>
+<tr>
+<td align="center">entry[ˈentrɪ]</td>
+<td align="center">n. 进入；入口；条目；</td>
+</tr>
+</tbody></table>
+<h3 id="Advance-19"><a href="#Advance-19" class="headerlink" title="Advance 19"></a>Advance 19</h3><table>
+<thead>
+<tr>
+<th align="center">HashMap</th>
+<th align="center">哈希图</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Hashtable</td>
+<td align="center">哈希表</td>
+</tr>
+<tr>
+<td align="center">TreeMap</td>
+<td align="center">矩阵树图</td>
+</tr>
+<tr>
+<td align="center">LinkedHashMap</td>
+<td align="center">链表哈希映射</td>
+</tr>
+<tr>
+<td align="center">property[‘prɒpətɪ]</td>
+<td align="center">属性</td>
+</tr>
+<tr>
+<td align="center">properties[‘prɒpətɪz]</td>
+<td align="center">（property 的复数形式）</td>
+</tr>
+<tr>
+<td align="center">bucket [‘bʌkɪt]</td>
+<td align="center">n. 桶</td>
+</tr>
+<tr>
+<td align="center">generic[dʒɪ’nerɪk]</td>
+<td align="center">泛化</td>
+</tr>
+<tr>
+<td align="center">wildcard[‘waɪldkɑrd]</td>
+<td align="center">n. 通配符</td>
+</tr>
+<tr>
+<td align="center">shuffle[‘ʃʌf(ə)l]</td>
+<td align="center">v. 洗牌</td>
+</tr>
+<tr>
+<td align="center">iterate [‘ɪtərət]</td>
+<td align="center">vt. 迭代；重复；</td>
+</tr>
+<tr>
+<td align="center">compare [kəm’peə]</td>
+<td align="center">n. 比较</td>
+</tr>
+<tr>
+<td align="center">insert [ɪn’sɜːt]</td>
+<td align="center">vt. 插入；嵌入;</td>
+</tr>
+<tr>
+<td align="center">fill [fɪl]</td>
+<td align="center">vt. 装满，使充满；满足；vi. 被充满</td>
+</tr>
+</tbody></table>
+<h3 id="Stage-20"><a href="#Stage-20" class="headerlink" title="Stage 20"></a>Stage 20</h3><table>
+<thead>
+<tr>
+<th align="center">file[faɪl]</th>
+<th align="center">n. 文件；</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">directory[dɪ’rekt(ə)rɪ; daɪ-]</td>
+<td align="center">n. [计] 目录；</td>
+</tr>
+<tr>
+<td align="center">create[kriː’eɪt]</td>
+<td align="center">创建</td>
+</tr>
+<tr>
+<td align="center">InputStream</td>
+<td align="center">字节输入流</td>
+</tr>
+<tr>
+<td align="center">OutputStream</td>
+<td align="center">字节输出流</td>
+</tr>
+<tr>
+<td align="center">Reader</td>
+<td align="center">字符输入流</td>
+</tr>
+<tr>
+<td align="center">Writer</td>
+<td align="center">字符输出流</td>
+</tr>
+<tr>
+<td align="center">read [ri:d;red]</td>
+<td align="center">读取</td>
+</tr>
+<tr>
+<td align="center">write [raɪt]</td>
+<td align="center">写</td>
+</tr>
+<tr>
+<td align="center">close[kləʊs]</td>
+<td align="center">vi. 关；结束；关闭</td>
+</tr>
+<tr>
+<td align="center">flush [flʌʃ]</td>
+<td align="center">刷新</td>
+</tr>
+<tr>
+<td align="center">stream [striːm]</td>
+<td align="center">流动；流</td>
+</tr>
+</tbody></table>
+<h3 id="Advance-20"><a href="#Advance-20" class="headerlink" title="Advance 20"></a>Advance 20</h3><table>
+<thead>
+<tr>
+<th align="center">folder[‘fəʊldə]</th>
+<th align="center">n. 文件夹；折叠机；</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">modified[ˈmɒdɪfaɪd]</td>
+<td align="center">adj. 改进的，修改的</td>
+</tr>
+<tr>
+<td align="center">long lastModified</td>
+<td align="center">获取最后一次的修改时间 ; 上次修改的时间</td>
+</tr>
+<tr>
+<td align="center">parent[‘peər(ə)nt]</td>
+<td align="center">n. 父亲（或母亲）；父母亲；根源</td>
+</tr>
+<tr>
+<td align="center">absolute[‘æbsəluːt]</td>
+<td align="center">adj. 绝对的；完全的；</td>
+</tr>
+<tr>
+<td align="center">canonical [kə’nɒnɪk(ə)l]</td>
+<td align="center">规范化</td>
+</tr>
+<tr>
+<td align="center">mkdir</td>
+<td align="center">n. 建立一个新的子目录（DOS 命令）</td>
+</tr>
+<tr>
+<td align="center">separator[‘sepəreɪtə]</td>
+<td align="center">[计] 分隔符</td>
+</tr>
+<tr>
+<td align="center">hidden [‘hɪdn]</td>
+<td align="center">adj. 隐藏的</td>
+</tr>
+<tr>
+<td align="center">suffix[‘sʌfɪks]</td>
+<td align="center">n. 后缀；下标</td>
+</tr>
+<tr>
+<td align="center">prefix[‘priːfɪks]</td>
+<td align="center">n. 前缀</td>
+</tr>
+<tr>
+<td align="center">readonly</td>
+<td align="center">adj. 只读的</td>
+</tr>
+<tr>
+<td align="center">canWrite</td>
+<td align="center">是否可写</td>
+</tr>
+<tr>
+<td align="center">readable[‘riːdəb(ə)l]</td>
+<td align="center">adj. 可读的；</td>
+</tr>
+<tr>
+<td align="center">exists</td>
+<td align="center">n. 存在量词（exist 的复数）</td>
+</tr>
+<tr>
+<td align="center">rename[riː’neɪm]</td>
+<td align="center">vt. 重新命名，改名</td>
+</tr>
+<tr>
+<td align="center">FileNotFoundException</td>
+<td align="center">文件找不到异常</td>
+</tr>
+</tbody></table>
+<h3 id="Stage-21"><a href="#Stage-21" class="headerlink" title="Stage 21"></a>Stage 21</h3><table>
+<thead>
+<tr>
+<th align="center">buffered</th>
+<th align="center">adj. 缓冲的;v. 缓冲（buffer 的过去分词）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ObjectInputStream</td>
+<td align="center">对象输入流，从字节流中读出序列化的状态信息并把它们恢复为对象</td>
+</tr>
+<tr>
+<td align="center">ObjectOutputStream</td>
+<td align="center">对象输出流，序列化一个对象</td>
+</tr>
+<tr>
+<td align="center">serializable Serializable</td>
+<td align="center">adj. 可串行化的</td>
+</tr>
+<tr>
+<td align="center">transient[‘trænzɪənt]</td>
+<td align="center">暂时性，瞬态的</td>
+</tr>
+<tr>
+<td align="center">channel[‘tʃæn(ə)l]</td>
+<td align="center">n. 通道；频道；海峡</td>
+</tr>
+</tbody></table>
+<h3 id="Advance-21"><a href="#Advance-21" class="headerlink" title="Advance 21"></a>Advance 21</h3><table>
+<thead>
+<tr>
+<th align="center">transfer[træns’fɜː; trɑːns-; -nz-]</th>
+<th align="center">n. 转让；转移；</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">encoding[ɪn’kəʊdɪŋ]</td>
+<td align="center">v. [计] 编码（encode 的 ing 形式）</td>
+</tr>
+<tr>
+<td align="center">decoding[‘di’kodɪŋ]</td>
+<td align="center">v. 破译；译解（decode 的 ing 形式）</td>
+</tr>
+<tr>
+<td align="center">charset</td>
+<td align="center">n. 字符集</td>
+</tr>
+<tr>
+<td align="center">UID</td>
+<td align="center">唯一标识符：unique identifier</td>
+</tr>
+<tr>
+<td align="center">serialVersionUID</td>
+<td align="center">序列化唯一标识符</td>
+</tr>
+<tr>
+<td align="center">access[‘ækses]</td>
+<td align="center">存取</td>
+</tr>
+<tr>
+<td align="center">RandomAccessFile</td>
+<td align="center">支持“随机访问”的方式，程序可以直接跳到文件的任意地方来读、写文件</td>
+</tr>
+<tr>
+<td align="center">seek [siːk]</td>
+<td align="center">vt. 寻求；寻找；</td>
+</tr>
+<tr>
+<td align="center">skip[skɪp]</td>
+<td align="center">vt. 跳过；遗漏</td>
+</tr>
+<tr>
+<td align="center">resources [rɪˈsɔːsiz]</td>
+<td align="center">n. [计][环境] 资源；物力（resource 的复数）</td>
+</tr>
+<tr>
+<td align="center">option[‘ɒpʃ(ə)n]</td>
+<td align="center">n. [计] 选项；</td>
+</tr>
+<tr>
+<td align="center">capacity[kə’pæsɪtɪ]</td>
+<td align="center">n. 能力；容量；</td>
+</tr>
+<tr>
+<td align="center">limit[‘lɪmɪt]</td>
+<td align="center">n. 限制；限度；界线</td>
+</tr>
+<tr>
+<td align="center">position[pə’zɪʃ(ə)n]</td>
+<td align="center">位置</td>
+</tr>
+<tr>
+<td align="center">mark[mɑːk]</td>
+<td align="center">标记，标志</td>
+</tr>
+<tr>
+<td align="center">reset [riː’set]</td>
+<td align="center">vi. 重置；清零</td>
+</tr>
+<tr>
+<td align="center">allocate[‘æləkeɪt]</td>
+<td align="center">vi. 分配；指定</td>
+</tr>
+<tr>
+<td align="center">flip[flɪp]</td>
+<td align="center">翻转</td>
+</tr>
+<tr>
+<td align="center">rewind[riː’waɪnd]</td>
+<td align="center">反绕、倒带、倒转、倒回；重绕</td>
+</tr>
+<tr>
+<td align="center">direct[dəˈrekt; daɪˈrekt]</td>
+<td align="center">adj. 直接的；</td>
+</tr>
+<tr>
+<td align="center">encoder [en’kəʊdə]</td>
+<td align="center">n. 编码器；译码器</td>
+</tr>
+<tr>
+<td align="center">decoder[,diː’kəʊdə]</td>
+<td align="center">n. 解码器，译码器；</td>
+</tr>
+<tr>
+<td align="center">serialize [‘sɪrɪəlaɪz]</td>
+<td align="center">vt. 连载，使连续，串行化</td>
+</tr>
+<tr>
+<td align="center">serialized</td>
+<td align="center">n. 序列化;使…成序列（serialize 的过去分词）</td>
+</tr>
+<tr>
+<td align="center">serialization [,sɪərɪəlɪ’zeʃən]</td>
+<td align="center">n. 序列化；串行化；</td>
+</tr>
+</tbody></table>
+<h3 id="Stage-22"><a href="#Stage-22" class="headerlink" title="Stage 22"></a>Stage 22</h3><table>
+<thead>
+<tr>
+<th align="center">thread [θred]</th>
+<th align="center">线程</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">start[stɑːt]</td>
+<td align="center">vt. 开始；启动</td>
+</tr>
+<tr>
+<td align="center">run[rʌn]</td>
+<td align="center">执行，运行</td>
+</tr>
+<tr>
+<td align="center">sleep[sliːp]</td>
+<td align="center">n. 睡眠</td>
+</tr>
+<tr>
+<td align="center">wait[weɪt]</td>
+<td align="center">vt. 等候；推迟；延缓</td>
+</tr>
+<tr>
+<td align="center">notify[‘nəʊtɪfaɪ]</td>
+<td align="center">vt. 通告，通知；公布</td>
+</tr>
+<tr>
+<td align="center">stop[stɒp]</td>
+<td align="center">vi. 停止；中止；</td>
+</tr>
+<tr>
+<td align="center">synchronized[‘sɪŋkrənaɪzd]</td>
+<td align="center">adj. 同步的；同步化的;v. 使协调（synchronize 的过去分词）；同时发生；校准</td>
+</tr>
+<tr>
+<td align="center">lock [lɒk]</td>
+<td align="center">vt. 锁，锁上；</td>
+</tr>
+</tbody></table>
+<h3 id="Advance-22"><a href="#Advance-22" class="headerlink" title="Advance 22"></a>Advance 22</h3><table>
+<thead>
+<tr>
+<th align="center">program[‘prəʊɡræm]</th>
+<th align="center">n. 程序；</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">process [prəˈses;(for n.)ˈprəʊses]</td>
+<td align="center">过程，进程</td>
+</tr>
+<tr>
+<td align="center">illegal [ɪ’liːg(ə)l]</td>
+<td align="center">adj. [法] 非法的；违法的；违反规则的</td>
+</tr>
+<tr>
+<td align="center">IllegalThreadStateException</td>
+<td align="center">非法的线程状态异常</td>
+</tr>
+<tr>
+<td align="center">interrupted[ɪntə’rʌptɪd]</td>
+<td align="center">adj. 中断的；被打断的；</td>
+</tr>
+<tr>
+<td align="center">suspend[sə’spend]</td>
+<td align="center">vt. 延缓，推迟；使暂停</td>
+</tr>
+<tr>
+<td align="center">resume[rɪˈzjuːm]</td>
+<td align="center">vt. 重新开始，继续；恢复，重新占用</td>
+</tr>
+<tr>
+<td align="center">yield[jiːld]</td>
+<td align="center">vi. 屈服，投降</td>
+</tr>
+<tr>
+<td align="center">alive[ə’laɪv]</td>
+<td align="center">adj. 活着的；</td>
+</tr>
+<tr>
+<td align="center">priority[praɪ’ɒrɪtɪ]</td>
+<td align="center">n. 优先；优先权；[数] 优先次序；</td>
+</tr>
+<tr>
+<td align="center">singleton[‘sɪŋg(ə)lt(ə)n]</td>
+<td align="center">独身，单例</td>
+</tr>
+<tr>
+<td align="center">lazy[‘leɪzɪ]</td>
+<td align="center">adj. 懒惰的</td>
+</tr>
+<tr>
+<td align="center">hungry[‘hʌŋgrɪ]</td>
+<td align="center">adj. 饥饿的；渴望的；</td>
+</tr>
+<tr>
+<td align="center">safe [seɪf]</td>
+<td align="center">adj. 安全的；可靠的；</td>
+</tr>
+<tr>
+<td align="center">join [dʒɒɪn]</td>
+<td align="center">vt. 参加；结合；连接;</td>
+</tr>
+</tbody></table>
+<h3 id="Stage-23"><a href="#Stage-23" class="headerlink" title="Stage 23"></a>Stage 23</h3><table>
+<thead>
+<tr>
+<th align="center">host name[‘host,nem]</th>
+<th align="center">n. 主机名称；主名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">host address</td>
+<td align="center">[计] 主机地址</td>
+</tr>
+<tr>
+<td align="center">IP[‘aɪ’pi]</td>
+<td align="center">abbr. 互联网协议（Internet Protocol）；</td>
+</tr>
+<tr>
+<td align="center">localhost</td>
+<td align="center">n. 本地主机；本地服务器</td>
+</tr>
+<tr>
+<td align="center">TCP</td>
+<td align="center">abbr. 传输控制协议（Transmission Control Protocol）；</td>
+</tr>
+<tr>
+<td align="center">UDP</td>
+<td align="center">abbr. 用户数据报协议（User Datagram Protocol）；</td>
+</tr>
+<tr>
+<td align="center">socket[‘sɒkɪt]</td>
+<td align="center">n. 插座；窝，穴；牙槽 [计]套接口，套接字</td>
+</tr>
+<tr>
+<td align="center">connect[kə’nekt]</td>
+<td align="center">vt. 连接；</td>
+</tr>
+<tr>
+<td align="center">server[‘sɜːvə]</td>
+<td align="center">服务器</td>
+</tr>
+<tr>
+<td align="center">client[‘klaɪənt]</td>
+<td align="center">客户端</td>
+</tr>
+<tr>
+<td align="center">receive[rɪ’siːv]</td>
+<td align="center">接收</td>
+</tr>
+<tr>
+<td align="center">send[send]</td>
+<td align="center">发送</td>
+</tr>
+<tr>
+<td align="center">port [pɔːt]</td>
+<td align="center">（计算机的）端口；</td>
+</tr>
+</tbody></table>
+<h3 id="Advance-23"><a href="#Advance-23" class="headerlink" title="Advance 23"></a>Advance 23</h3><table>
+<thead>
+<tr>
+<th align="center">internet [‘ɪntənet]</th>
+<th align="center">n. 因特网</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">datagram [‘detə,græm]</td>
+<td align="center">n. 数据报</td>
+</tr>
+<tr>
+<td align="center">packet [‘pækɪt]</td>
+<td align="center">n. 数据包，信息包；</td>
+</tr>
+<tr>
+<td align="center">HTTP</td>
+<td align="center">abbr. 超文本传输协议（Hyper Text Transport Protocol）</td>
+</tr>
+<tr>
+<td align="center">url [,ju: ɑ:r ‘el]</td>
+<td align="center">abbr. 全球资源定位器（Uniform Resource Locator）;</td>
+</tr>
+<tr>
+<td align="center">request [rɪ’kwest]</td>
+<td align="center">n. 请求；需要; vt. 要求，请求</td>
+</tr>
+<tr>
+<td align="center">response[rɪ’spɒns]</td>
+<td align="center">n. 响应；反应；回答</td>
+</tr>
+<tr>
+<td align="center">locate [lə(ʊ)’keɪt]</td>
+<td align="center">vt. 位于；查找…的地点;vi. 定位；定居</td>
+</tr>
+<tr>
+<td align="center">link [lɪŋk]</td>
+<td align="center">n. [计] 链环，环节；联系，关系vt. 连接，连结；</td>
+</tr>
+<tr>
+<td align="center">linkage [‘lɪŋkɪdʒ]</td>
+<td align="center">n. 连接；结合；联接</td>
+</tr>
+<tr>
+<td align="center">linker [‘lɪŋkɚ]</td>
+<td align="center">n. 链接器；连结器</td>
+</tr>
+<tr>
+<td align="center">firewall [‘faɪɚwɔl]</td>
+<td align="center">n. 防火墙;</td>
+</tr>
+<tr>
+<td align="center">login [‘lɒɡɪn]</td>
+<td align="center">n. [计] 进入系统;vt. [计] 登录；注册</td>
+</tr>
+<tr>
+<td align="center">online [ɒn’laɪn]</td>
+<td align="center">adj. 联机的；在线的</td>
+</tr>
+<tr>
+<td align="center">offline [ɒf’laɪn]</td>
+<td align="center">adj. 脱机的；离线的，未连线的</td>
+</tr>
+</tbody></table>
+<h3 id="Stage-24"><a href="#Stage-24" class="headerlink" title="Stage 24"></a>Stage 24</h3><table>
+<thead>
+<tr>
+<th align="center">field[fiːld]</th>
+<th align="center">字段、域、属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">method[‘meθəd]</td>
+<td align="center">n. 方法；条理；类函数</td>
+</tr>
+<tr>
+<td align="center">invoke[ɪn’vəʊk]</td>
+<td align="center">调用</td>
+</tr>
+<tr>
+<td align="center">constructor[kənˈstrʌktə(r)]</td>
+<td align="center">n. 构造函数；构造器；</td>
+</tr>
+<tr>
+<td align="center">new instance newInstance()</td>
+<td align="center">创建实例对象</td>
+</tr>
+<tr>
+<td align="center">ClassLoader</td>
+<td align="center">类加载器</td>
+</tr>
+</tbody></table>
+<h3 id="Advance-24"><a href="#Advance-24" class="headerlink" title="Advance 24"></a>Advance 24</h3><table>
+<thead>
+<tr>
+<th align="center">reflect[rɪ’flekt]</th>
+<th align="center">反射</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">load[ləʊd]</td>
+<td align="center">vi. [力] 加载；装载</td>
+</tr>
+<tr>
+<td align="center">declared [dɪ’kleəd]</td>
+<td align="center">已声明的</td>
+</tr>
+<tr>
+<td align="center">accessible[ək’sesɪb(ə)l]</td>
+<td align="center">adj. 易接近的；可进入的；</td>
+</tr>
+<tr>
+<td align="center">dynamic[daɪ’næmɪk]</td>
+<td align="center">adj. 动态的；</td>
+</tr>
+<tr>
+<td align="center">handle [‘hænd(ə)l]</td>
+<td align="center">vt. 处理；操作；</td>
+</tr>
+<tr>
+<td align="center">InvocationHandler</td>
+<td align="center">调用处理器，其实动态代理机制最核心的就是 InvocationHandler(调用处理器)这个接口。在动态代理中，是基于面向接口编程的。</td>
+</tr>
+<tr>
+<td align="center">parameter type</td>
+<td align="center">参数类型，parameterTypes（复数形式）</td>
+</tr>
+<tr>
+<td align="center">primitive type</td>
+<td align="center">基本数据类型网络其他描述方式：base data type、primary data type、atomic data type</td>
+</tr>
+<tr>
+<td align="center">reference type</td>
+<td align="center">引用数据类型</td>
+</tr>
+<tr>
+<td align="center">Generic Superclass</td>
+<td align="center">泛化父类，例如：Father<string></string></td>
+</tr>
+<tr>
+<td align="center">Generic Interfaces</td>
+<td align="center">泛化接口们，例如：Comparable<student>等</student></td>
+</tr>
+<tr>
+<td align="center">getDeclaredMethod(String name, Class&lt;?&gt;… parameterTypes)</td>
+<td align="center">返回一个 Method 对象，该对象反映此 Class 对象所表示的类或接口的指定已声明方法</td>
+</tr>
+<tr>
+<td align="center">getMethod(String name, Class&lt;?&gt;… parameterTypes)</td>
+<td align="center">返回一个 Method 对象，它反映此 Class 对象所表示的类或接口的指定公共成员方法。</td>
+</tr>
+<tr>
+<td align="center">target [‘tɑːgɪt]</td>
+<td align="center">n. 目标；靶子;vt. 把……作为目标；规定……的指标；</td>
+</tr>
+</tbody></table>
+<h3 id="Stage-25"><a href="#Stage-25" class="headerlink" title="Stage 25"></a>Stage 25</h3><table>
+<thead>
+<tr>
+<th align="center">lambda[‘læmdə]</th>
+<th align="center">n. 希腊字母的第 11 个</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">functional[‘fʌŋkʃənl]</td>
+<td align="center">adj. 功能的</td>
+</tr>
+<tr>
+<td align="center">interface[‘intəfeis]</td>
+<td align="center">n. 界面；接口；接触面</td>
+</tr>
+<tr>
+<td align="center">consumer[kən’sju:mə]</td>
+<td align="center">n. 消费者；用户，顾客</td>
+</tr>
+<tr>
+<td align="center">supplier[sə’plaɪə]</td>
+<td align="center">n. 供应厂商，供应国；供应者</td>
+</tr>
+<tr>
+<td align="center">function[‘fʌŋ(k)ʃ(ə)n]</td>
+<td align="center">n. 功能；[数] 函数；职责；盛大的集会;vi. 运行；活动；行使职责</td>
+</tr>
+<tr>
+<td align="center">predicate[ˈprɛdɪˌkeɪt]</td>
+<td align="center">vt. 断定为…；使…基于;vi. 断言，断定;n. 谓语，述语;adj. 谓语的；述语的</td>
+</tr>
+<tr>
+<td align="center">optional [‘ɒpʃ(ə)n(ə)l] Optional</td>
+<td align="center">adj. 可选择的，随意的</td>
+</tr>
+<tr>
+<td align="center">stream[striːm]</td>
+<td align="center">n. 溪流；流动；潮流；光线;vi. 流；涌进；飘扬;vt. 流出；涌出；使飘动</td>
+</tr>
+<tr>
+<td align="center">filter [‘fɪltə]</td>
+<td align="center">vi. 滤过；渗入；慢慢传开;n. 滤波器；[化工] 过滤器；筛选；滤光器;vt. 过滤；渗透；用过滤法除去</td>
+</tr>
+<tr>
+<td align="center">distinct[dɪ’stɪŋ(k)t]</td>
+<td align="center">adj. 明显的；独特的；清楚的；有区别的</td>
+</tr>
+<tr>
+<td align="center">limit[‘lɪmɪt]</td>
+<td align="center">n. 限制；限度；界线;vt. 限制；限定</td>
+</tr>
+<tr>
+<td align="center">skip[skɪp]</td>
+<td align="center">vi. 跳跃；跳绳；遗漏；跳读;vt. 跳过；遗漏;n. 跳跃；跳读</td>
+</tr>
+<tr>
+<td align="center">map [mæp]</td>
+<td align="center">vt. 映射；计划；绘制地图；确定基因在染色体中的位置</td>
+</tr>
+<tr>
+<td align="center">flat[flæt]</td>
+<td align="center">adj. 平的；单调的；不景气的；干脆的；平坦的；扁平的；浅的adv. （尤指贴着另一表面）平直地；断然地；水平地；直接地，完全地;n. 平地；公寓；平面;vt. 使变平；[音乐]使（音调）下降，尤指降半音</td>
+</tr>
+<tr>
+<td align="center">match[mætʃ]</td>
+<td align="center">vt. 使比赛；使相配；敌得过，比得上；相配；与…竞争</td>
+</tr>
+<tr>
+<td align="center">reduce [rɪ’djuːs]</td>
+<td align="center">vt. 减少；降低；使处于；把…分解;vi. 减少；缩小；归纳为</td>
+</tr>
+<tr>
+<td align="center">collect[kə’lekt]</td>
+<td align="center">vt. 收集；募捐;vi. 收集；聚集；募捐</td>
+</tr>
+</tbody></table>
+<h3 id="Advance-25"><a href="#Advance-25" class="headerlink" title="Advance 25"></a>Advance 25</h3><table>
+<thead>
+<tr>
+<th align="center">unary[‘juːnərɪ]</th>
+<th align="center">adj. [数] 一元的</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">operator[‘ɒpəreɪtə]</td>
+<td align="center">n. 经营者；操作员；话务员；行家</td>
+</tr>
+<tr>
+<td align="center">binary[‘baɪnərɪ]</td>
+<td align="center">adj. [数] 二进制的；二元的，二态的</td>
+</tr>
+<tr>
+<td align="center">parallel[‘pærəlel]</td>
+<td align="center">n. 平行线；对比;vt. 使…与…平行;adj. 平行的；类似的，相同的</td>
+</tr>
+</tbody></table>
+
+            </div>
+            <hr/>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力!</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/yu.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+            
+            
+            <div class="reprint1">
+                <p>
+                    <span class="reprint1-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://noom.ml" class="b-link-green">奇遇少年</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/posts/sumofprolanwords.html" class="b-link-green">Java 编程语言单词汇总</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+    /* valine 评论框增加背景图片 */
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("http://www.luckyzmj.cn/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments .vwrap {
+        box-sizing: border-box;
+        padding: 0 0 44px;
+        background-color: #F0FFF0;
+    }
+    #vcomments .vwrap .vheader{width: 80%;bottom:0;position: absolute;background: #F0FFF0;}
+
+    #vcomments .vinput{padding:10px 15px; text-align: center;}
+
+    #vcomments .vwrap .vheader .vinput{border-bottom:0px}
+
+    #vcomments .vwrap .vedit .vctrl{margin-top:-44px;right:0;position:absolute;margin-right:-3px;}
+
+    #vcomments  .vwrap .vrow{position:absolute;right:0;bottom:0;width:20%;padding-top:0px;}
+
+    #vcomments  .vrow {font-size: 0;padding: 0px 0;}
+
+    #vcomments  .vicon {margin-right: 15px;}
+
+    #vcomments  .vrow .vcol.vcol-30{display: none}
+
+    #vcomments  .vedit .vctrl span.vpreview-btn{display: none}
+
+    #vcomments  .vrow .vcol.vcol-70{width: 100%;}
+
+    #vcomments  .vsubmit.vbtn{border-radius: 0;padding: 0;color: #fff;line-height: 44px;width:100%;border: none;background:#00ecbc;}
+
+    #vcomments  .vcards .vcard .vh .vhead .vsys{background: #F0FFF0;}
+
+    #vcomments  .vcards .vcard .vh .vmeta .vat{font-size: 12px;display: block;margin-left: 15px;float: right;color: #fff;background-color: #00ecbc;line-height: 20px;padding: 0 6px;border-radius: 3px;}
+
+    @media screen and (max-width: 520px){
+    #vcomments  .vwrap .vheader .vinput{width: 33.33%;padding:10px 5px;}  
+    }
+
+    #vcomments input[type=text],
+
+    #vcomments input[type=email],
+
+    #vcomments input[type=url],
+
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+    #vcomments .vwrap p {
+        height: 20px;
+        width: 20px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    /* 修复评论第一行位置错位 */
+    .v .vlist .vcard {
+    padding-top: 2.5em !important ;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        admin_email: '16463223@qq.com',
+        appId: '29CoaEQR7y5QoBkdckdLKS1m-MdYXbMMI',
+        appKey: 'bdx6TMyT6WDFMBhIUIOWFnX0',
+        path: window.location.pathname,
+        comment_count: true,
+        notify: 'false' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go',
+
+    });
+    $(document).ready(function(){
+        $("#vcomments").on('click', 'span.vat',function(){
+            $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+            $('textarea#veditor').focus();
+        })
+    })
+</script>
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+    jinrishici.load(function(result) {
+        var jrsc_plac =  result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin.dynasty + " · " + result.data.origin.author
+        document.getElementById("veditor").setAttribute("placeholder",jrsc_plac);
+    });
+</script>
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/sumofprolanwords.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Java 编程语言单词汇总">
+                        
+                        <span class="card-title">Java 编程语言单词汇总</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Java 是由 Sun Microsystems 公司于 1995 年 5 月推出的 Java 面向对象程序设计语言和 Java 平台的总称。由 James Gosling和同事们共同研发，并在 1995 年正式推出。后来 Sun 公司被 
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java篇/" class="post-category" target="_blank">
+                                    java篇
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/" target="_blank">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="/tags/programingLanguage/" target="_blank">
+                        <span class="chip bg-color">programingLanguage</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/basiccomputer.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/66.jpg" class="responsive-img" alt="计算机基础">
+                        
+                        <span class="card-title">计算机基础</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            概述计算机包括硬件(hardware)和软件(software)两部分。硬件包括计算机中可以看得见的物理部分。而软件提供看不见的指令。这些指令控制硬件并且使得硬件完成特定的任务。
+程序设计定义：创建（或开发）软件。软件包含了指令，告诉计算机
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-02-05
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/计算机基础篇/" class="post-category" target="_blank">
+                                    计算机基础篇
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/World-Wide-Web/" target="_blank">
+                        <span class="chip bg-color">World Wide Web</span>
+                    </a>
+                    
+                    <a href="/tags/hardware-software/" target="_blank">
+                        <span class="chip bg-color">hardware software</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 奇遇少年<br />'
+            + '作者: 少年<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.bootcss.com/tocbot/4.8.1/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+        <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            
+            Copyright&copy;少年 2021
+            <!-- 备案信息配置
+            Copyright&copy; 2021 noom.ml | <a href="http://www.beian.miit.gov.cn/">备案</a>
+            <br>
+            
+             <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=备案号"><img src="http://www.luckyzmj.cn/medias/gaba.png" /> 备案号</a>
+             -->
+             <br>
+             
+            <span id="sitetime"></span><span class="my-face">ღゝ◡╹)ノ♡</span>
+            <br>
+
+            
+
+            
+                    
+                        <span id="busuanzi_container_site_pv" style='display:none'></span>
+                        总访问量: <span id="busuanzi_value_site_pv" class="white-color"></span>
+                    
+        
+                    
+                        <span id="busuanzi_container_site_uv" style='display:none'></span>
+                        人次&nbsp; | &nbsp;访客人数: <span id="busuanzi_value_site_uv" class="white-color"></span> 人
+                    
+    
+            
+
+            
+                &nbsp; | &nbsp;字数统计:&nbsp;
+                <span class="white-color">49.4k</span> 字
+            
+
+            
+            <br>
+
+        </div>
+
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/lnoom" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+ 
+    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=yuitge@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=1536835029&site=qq&menu=yes" class="tooltipped" target="_blank" data-tooltip="访问我的QQ空间" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+
+        var t1 = Date.UTC(2020, 01, 31, 00, 00, 00); //北京时间
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+            minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours +
+            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒" ;
+    } /*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+
+
+
+
+        <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+        <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+        <script src="https://cdn.bootcss.com/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://cdn.bootcss.com/masonry/4.0.0/masonry.pkgd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script src="https://cdn.bootcss.com/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.11/js/lightgallery-all.min.js"></script>
+        <script src="/js/matery.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+        
+            <script src="/libs/others/clicklove.js"></script>
+        
+
+        
+            <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+        
+
+        <script type="text/javascript">
+		/*
+            var OriginTitile = document.title,
+                st;
+            document.addEventListener("visibilitychange", function () {
+                document.hidden ? (document.title = "奇遇少年", clearTimeout(st)) : (document.title =
+                    "奇遇少年", st = setTimeout(function () {
+                        document.title = OriginTitile
+                    }, 3e3))
+            })
+			*/
+        </script>
+
+        <!-- 鼠标点击烟花爆炸效果 -->
+        
+
+        <!-- 背景雪花飘落特效 -->
+        
+
+        <!-- 鼠标点击文字特效 -->
+        
+            <script src="/js/wenzi.js" type="text/javascript"></script>
+        
+        
+
+        <!-- 背景雪花飘落特效 -->
+        
+            <script type="text/javascript">
+                var windowWidth = $(window).width();
+                if (windowWidth > 768) {
+                    document.write('<script type="text/javascript" src="/js/xuehuapiaoluo.js"><\/script>');
+                }
+            </script>
+        
+
+        <!-- 在线聊天工具  -->
+        
+
+        <!-- 背景 canvas-nest -->
+        
+
+        <!-- 背景静止彩带  -->
+        
+
+        <!-- 背景动态彩带 -->
+        
+            <script type="text/javascript">
+            var windowWidth = $(window).width();
+            if (windowWidth > 992) {
+                document.write('<script type="text/javascript" src="/libs/background/ribbon-dynamic.js"><\/script>');
+            }
+            </script>
+        
+
+        <!-- 天气接口控件   -->
+        
+            <script type="text/javascript">
+            WIDGET = {FID: 'zLkJSQpqsh'}
+            </script>
+        <!-- <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script> -->
+
+        <script type="text/javascript">
+          var windowWidth = $(window).width();
+          if (windowWidth > 768) {
+              document.write('<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"><\/script>');
+          }
+        </script>
+        
+        
+          <script>
+            (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/410f202e.js","daovoice")
+  daovoice('init', {
+      app_id: "57cd2ceb"
+    });
+  daovoice('update');
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+        
+
+    <script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":200},"mobile":{"show":false},"react":{"opacity":0.7}});</script></body>
+</html>
